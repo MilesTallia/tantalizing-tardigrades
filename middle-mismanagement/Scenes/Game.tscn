@@ -28,3 +28,5 @@ input_pickable = true
 [node name="Paper" parent="." instance=ExtResource("3")]
 position = Vector2(480.443, 131.188)
 input_pickable = true
+
+[node name="GameManger" type="Node" parent="."]
