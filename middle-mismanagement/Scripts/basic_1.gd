@@ -16,7 +16,7 @@ func randomize_bad():
 	
 func randomize_good():
 	var version = rng.randf_range(0, 10)
-	if (version <= 8):
+	if (version >= 8):
 		randomize_aqi_reducer()
 	else:
 		var aqi = 0
@@ -50,4 +50,8 @@ func set_values(aqi, cost, output):
 	$Output.set_value(Color(0,0,0))	
 	
 func _ready():
-	rand(true);
+	var version = rng.randf_range(0, 10)
+	if (version <= 5):
+		rand(true)
+	else:
+		rand(false)
