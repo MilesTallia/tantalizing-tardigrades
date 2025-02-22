@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://db61qb2c13rvi"]
+[gd_scene load_steps=7 format=3 uid="uid://db61qb2c13rvi"]
 
 [ext_resource type="Script" path="res://Scripts/PaperGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
+[ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -18,15 +20,28 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3")]
-position = Vector2(725.443, 180.709)
+position = Vector2(795, 535)
 input_pickable = true
 
 [node name="Paper3" parent="." instance=ExtResource("3")]
-position = Vector2(259.77, 121.631)
+position = Vector2(246, 536)
 input_pickable = true
 
 [node name="Paper" parent="." instance=ExtResource("3")]
-position = Vector2(480.443, 131.188)
+position = Vector2(522, 527)
 input_pickable = true
 
+[node name="DebriefPage" parent="." instance=ExtResource("3")]
+position = Vector2(1000, 177)
+input_pickable = true
+script = ExtResource("5_7ns8a")
+
+[node name="Label" type="Label" parent="DebriefPage"]
+offset_left = -98.0
+offset_top = -148.0
+offset_right = 96.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="GameManger" type="Node" parent="."]
+script = ExtResource("4_icqku")

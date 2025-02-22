@@ -28,6 +28,15 @@ func _physics_process(delta):
 		set_velocity((newPosition - position) * Vector2(30, 30))
 		move_and_slide()
 
+func set_text():
+	var gameManager = get_node("..//GameManger")
+	var debrief_test:String = ""
+	debrief_test += "Day number: " + str(gameManager.get_day_num()) + "\n"
+	debrief_test += "Money: $" + str(gameManager.get_money()) + "\n"
+	debrief_test += "Air quality " + str(gameManager.get_current_atm()) + " AQI\n"
+	debrief_test += "Current energy " + str(gameManager.get_current_energy()) + " MW\n"
+	debrief_test += "Required energy " + str(gameManager.get_day_num() * 100) + " MW\n"
+	$Label.text = debrief_test
 
 func chosenVal():
 	chosen = true
