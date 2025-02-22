@@ -29,3 +29,7 @@ func _process(delta):
 				b.chosen = false
 		if (Input.is_action_just_pressed("mouse_click")):
 			get_parent().push_paper_to_top(top_paper)
+
+
+func _on_name_plate_mouse_entered() -> void:
+	pass # Replace with function body.

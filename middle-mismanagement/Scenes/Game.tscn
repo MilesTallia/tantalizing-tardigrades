@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://db61qb2c13rvi"]
+[gd_scene load_steps=6 format=3 uid="uid://db61qb2c13rvi"]
 
 [ext_resource type="Script" path="res://Scripts/PaperGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bspfi0c7qs6ve" path="res://Scenes/NamePlate.tscn" id="4_nl6na"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -18,13 +19,19 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3")]
-position = Vector2(725.443, 180.709)
+position = Vector2(957, 209)
 input_pickable = true
 
 [node name="Paper3" parent="." instance=ExtResource("3")]
-position = Vector2(259.77, 121.631)
+position = Vector2(211, 104)
 input_pickable = true
 
 [node name="Paper" parent="." instance=ExtResource("3")]
-position = Vector2(480.443, 131.188)
+position = Vector2(655, 207)
 input_pickable = true
+
+[node name="NamePlate" parent="." instance=ExtResource("4_nl6na")]
+offset_left = 18.0
+offset_top = 317.0
+offset_right = 18.0
+offset_bottom = 317.0
