@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://j1o0vx3bjnn5"]
 
-[ext_resource type="Script" path="res://Scripts/Paper.gd" id="2"]
+[ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_c1cc0"]
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="3"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -8,7 +8,7 @@ size = Vector2(224.596, 325.194)
 
 [node name="Paper" type="CharacterBody2D"]
 collision_layer = 2
-script = ExtResource("2")
+script = ExtResource("1_c1cc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3")
