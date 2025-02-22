@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://bspfi0c7qs6ve" path="res://Scenes/NamePlate.tscn" id="4_nl6na"]
-[ext_resource type="Script" path="res://Scripts/Paper.gd" id="4_vu3r5"]
+[ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_hsayt"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -21,21 +21,13 @@ shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3")]
 position = Vector2(957, 209)
-input_pickable = true
-script = ExtResource("4_vu3r5")
 
 [node name="Paper3" parent="." instance=ExtResource("3")]
-position = Vector2(211, 104)
-input_pickable = true
-script = ExtResource("4_vu3r5")
+position = Vector2(407, 172)
 
 [node name="Paper" parent="." instance=ExtResource("3")]
 position = Vector2(655, 207)
-input_pickable = true
-script = ExtResource("4_vu3r5")
 
 [node name="NamePlate" parent="." instance=ExtResource("4_nl6na")]
-offset_left = 18.0
-offset_top = 317.0
-offset_right = 18.0
-offset_bottom = 317.0
+
+[node name="Folder" parent="." instance=ExtResource("6_hsayt")]
