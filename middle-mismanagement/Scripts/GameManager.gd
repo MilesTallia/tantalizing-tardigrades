@@ -110,7 +110,7 @@ func end_day() -> void:
 		get_parent().remove_child(folder)
 		if folder.passed:
 			set_money(money + folder.cost)
-			set_change_atm(change_atm + folder.api)
+			set_change_atm(change_atm + folder.aqi)
 			set_current_energy(current_energy + folder.output)
 		
 	if (money < 0):
