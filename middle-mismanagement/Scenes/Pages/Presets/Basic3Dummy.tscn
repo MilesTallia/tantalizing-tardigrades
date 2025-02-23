@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwerm0jbngxp8"]
+
+[ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_ks0g7"]
+[ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="2_2onsv"]
+[ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="4_yese3"]
+[ext_resource type="PackedScene" uid="uid://bp8ex58v2rwg0" path="res://Scenes/Graph.tscn" id="5_j6p2p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
+size = Vector2(224.596, 325.194)
+
+[node name="Page2" type="CharacterBody2D"]
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_ks0g7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2onsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_4hj8p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -103.0
+offset_top = 112.0
+offset_right = -48.0
+offset_bottom = 152.0
+color = Color(0.764706, 0.780392, 0.792157, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="Project" parent="Labels" instance=ExtResource("4_yese3")]
+visible = false
+offset_left = 4.0
+offset_top = -152.0
+offset_right = 388.0
+offset_bottom = -87.0
+text = "Project Name"
+
+[node name="Label" parent="Labels/Project" index="0"]
+visible = false
+
+[node name="Field2" parent="Labels/Project/Label" index="0" instance=ExtResource("4_yese3")]
+layout_mode = 0
+text = "Title: SweatShop"
+script = null
+
+[node name="Title" parent="Labels" instance=ExtResource("4_yese3")]
+offset_left = -90.0
+offset_top = -120.0
+offset_right = 422.0
+offset_bottom = -55.0
+text = ""
+
+[node name="Label" parent="Labels/Title" index="0"]
+offset_left = 0.0
+offset_right = 288.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "SweatShop"
+
+[node name="Graph" parent="Labels" instance=ExtResource("5_j6p2p")]
+position = Vector2(10.365, 0)
+
+[connection signal="mouse_entered" from="." to="." method="mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exited"]
+
+[editable path="Labels/Project"]
+[editable path="Labels/Title"]

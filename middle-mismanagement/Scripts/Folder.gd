@@ -64,9 +64,9 @@ func spawn_pages():
 	var page = load("res://Scenes/Pages/Presets/Basic" + str(difficulty) + ".tscn")
 	var pageInst = page.instantiate()
 	pageInst.position = position
+	get_parent().add_child(pageInst)
 	var values = []
 	if (good):
-		print(pageInst.get_child(3))
 		values = pageInst.get_child(3).rand(true)
 	else:
 		values = pageInst.get_child(3).rand(false)
@@ -74,7 +74,6 @@ func spawn_pages():
 	cost = values[1]
 	output = values[2]
 	
-		
 	get_parent().add_child(pageInst)
 	
 func get_stamped(stamp: bool):
@@ -85,7 +84,6 @@ func get_stamped(stamp: bool):
 		
 func get_stats():
 	return [aqi, cost, output]
-
 
 func chosenVal():
 	chosen = true
