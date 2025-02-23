@@ -108,6 +108,10 @@ func start_day() -> void:
 
 	
 func end_day() -> void:
+	var screen = get_node("..//ColorRect")
+	screen.show()
+	await get_tree().create_timer(3).timeout
+	screen.hide()
 	for folder in array_folders:
 		get_parent().remove_child(folder)
 		if folder.passed:

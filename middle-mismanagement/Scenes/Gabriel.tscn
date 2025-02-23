@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="5_80lc0"]
 [ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_fhp41"]
 [ext_resource type="PackedScene" uid="uid://chrbb5lhfurpa" path="res://Scenes/Pages/Presets/Basic2.tscn" id="7_irfgq"]
-[ext_resource type="PackedScene" uid="uid://olsho8scxxxe" path="res://Scenes/FailStamp.tscn" id="7_ixo6o"]
+[ext_resource type="PackedScene" path="res://Scenes/FailStamp.tscn" id="7_ixo6o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks7s2"]
 radius = 2.52616

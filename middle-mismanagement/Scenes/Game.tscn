@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
-[ext_resource type="PackedScene" uid="uid://olsho8scxxxe" path="res://Scenes/FailStamp.tscn" id="3_yquht"]
+[ext_resource type="PackedScene" path="res://Scenes/FailStamp.tscn" id="3_yquht"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
 [ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="6_s4b2g"]
@@ -72,6 +72,27 @@ position = Vector2(965, 540)
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("12_iao3h")]
 scale = Vector2(1.275, 1.275)
 script = ExtResource("13_5vx58")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 999
+offset_left = 1.0
+offset_right = 1903.0
+offset_bottom = 1074.0
+color = Color(0, 0, 0, 1)
+
+[node name="endDayLabel" type="Label" parent="ColorRect"]
+z_index = 1000
+layout_mode = 0
+offset_right = 1929.0
+offset_bottom = 1066.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "Next Day"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="OkStamp2"]
 [editable path="Clock"]

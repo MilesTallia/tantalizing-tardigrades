@@ -10,8 +10,8 @@
 [node name="Game" parent="." instance=ExtResource("1_bkpa5")]
 
 [node name="Background" parent="Game" index="0"]
-position = Vector2(571, 331)
-scale = Vector2(0.332682, 0.332682)
+position = Vector2(570.164, 331)
+scale = Vector2(0.332272, 0.332682)
 
 [node name="OkStamp" parent="Game" index="1"]
 position = Vector2(768, 288)
@@ -40,7 +40,7 @@ offset_top = -148.0
 offset_right = 96.0
 offset_bottom = 23.0
 scale = Vector2(1, 1)
-autowrap_mode = 0
+theme_override_font_sizes/font_size = 15
 
 [node name="GameManager" parent="Game" index="4"]
 script = ExtResource("2_732h3")
