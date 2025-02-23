@@ -15,6 +15,9 @@ func add_obj(obj):
 	
 	var count = 0
 	for p in obj_stack:
+		if (!is_instance_valid(p)):
+			obj_stack.erase(p)
+			continue
 		p.z_index = count
 		
 		count += 1
