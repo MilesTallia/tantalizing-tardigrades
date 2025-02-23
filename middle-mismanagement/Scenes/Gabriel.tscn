@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6npjjdfpond"]
+[gd_scene load_steps=6 format=3 uid="uid://c6m7r2e4gpiak"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_mrqer"]
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="2_4b3ht"]
@@ -20,15 +20,12 @@ shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(725.443, 180.709)
-input_pickable = true
 
 [node name="Paper3" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(259.77, 121.631)
-input_pickable = true
 
 [node name="Paper" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(480.443, 131.188)
-input_pickable = true
 
 [node name="Page" parent="." instance=ExtResource("4_alb5g")]
 position = Vector2(222, 377)

@@ -61,12 +61,20 @@ func start_day() -> void:
 	var debrief_page = get_node("..//DebriefPage")
 	debrief_page.set_text()
 	# get folders
+	#display folders
+	
+	#var game_scene = load("res://scenes/enemy.tscn") 
+
+	#var game_instence = game_scene.instantiate()  
+
+	#new_folder.position = position  
+
+	#add_child(new_folder) 
 	
 	
 func end_day() -> void:
-	for folder in array_folders:
-		money.set(money + folder.get)
-	
+	#for folder in array_folders:
+		#money.set(money + folder.get)
 	if (money < 0):
 		end_game()
 	elif (current_atm > 200):
@@ -78,12 +86,17 @@ func end_day() -> void:
 
 func end_game():
 	print(get_path())
-	
 	get_tree().change_scene_to_file("res://Scenes/Death.tscn")
 	#change scene to end game
 	return; 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
+	if array_folders != null:
+		var tof : bool = true
+		for folder in array_folders:
+			if tof:
+				tof = folder.is_stamped()
+		if tof:
+			end_day()
+		

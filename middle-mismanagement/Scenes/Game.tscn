@@ -1,23 +1,11 @@
-<<<<<<< HEAD
-[gd_scene load_steps=7 format=3 uid="uid://db61qb2c13rvi"]
-=======
-[gd_scene load_steps=6 format=3 uid="uid://db61qb2c13rvi"]
->>>>>>> origin/main
+[gd_scene load_steps=8 format=3 uid="uid://db61qb2c13rvi"]
 
-[ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
+[ext_resource type="Script" path="res://Scripts/PaperGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
-<<<<<<< HEAD
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
+[ext_resource type="Script" path="res://Scripts/Paper.gd" id="4_rq5sx"]
 [ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
-=======
-<<<<<<< HEAD
-[ext_resource type="PackedScene" path="res://Scenes/NamePlate.tscn" id="4_nl6na"]
-=======
-[ext_resource type="PackedScene" uid="uid://bspfi0c7qs6ve" path="res://Scenes/NamePlate.tscn" id="4_nl6na"]
-[ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_hsayt"]
->>>>>>> 4d7af8fd34bb4b73506f2c4ff2a2147d30d20ae6
->>>>>>> origin/main
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -25,29 +13,27 @@ radius = 2.52616
 [node name="Game" type="Node2D"]
 script = ExtResource("2")
 
-[node name="DragableIndexGetter" type="Area2D" parent="."]
+[node name="PaperGetter" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DragableIndexGetter"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PaperGetter"]
 shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3")]
-<<<<<<< HEAD
 position = Vector2(795, 535)
-input_pickable = true
+script = ExtResource("4_rq5sx")
 
 [node name="Paper3" parent="." instance=ExtResource("3")]
 position = Vector2(246, 536)
-input_pickable = true
+script = ExtResource("4_rq5sx")
 
 [node name="Paper" parent="." instance=ExtResource("3")]
 position = Vector2(522, 527)
-input_pickable = true
+script = ExtResource("4_rq5sx")
 
 [node name="DebriefPage" parent="." instance=ExtResource("3")]
 position = Vector2(1000, 177)
-input_pickable = true
 script = ExtResource("5_7ns8a")
 
 [node name="Label" type="Label" parent="DebriefPage"]
@@ -59,29 +45,3 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("4_icqku")
-=======
-position = Vector2(957, 209)
-<<<<<<< HEAD
-input_pickable = true
-
-[node name="Paper3" parent="." instance=ExtResource("3")]
-position = Vector2(211, 104)
-input_pickable = true
-
-[node name="Paper" parent="." instance=ExtResource("3")]
-position = Vector2(655, 207)
-input_pickable = true
-=======
-
-[node name="Paper3" parent="." instance=ExtResource("3")]
-position = Vector2(856, 386)
-
-[node name="Paper" parent="." instance=ExtResource("3")]
-position = Vector2(655, 207)
->>>>>>> 4d7af8fd34bb4b73506f2c4ff2a2147d30d20ae6
-
-[node name="NamePlate" parent="." instance=ExtResource("4_nl6na")]
-
-[node name="Folder" parent="." instance=ExtResource("6_hsayt")]
-position = Vector2(207, 269)
->>>>>>> origin/main

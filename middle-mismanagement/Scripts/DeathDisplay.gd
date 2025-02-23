@@ -8,13 +8,14 @@ func _ready() -> void:
 func display_death() -> void:
 	
 	var death_msg : String = ""
-	print(get_path())
-	var game_manager = get_node("/../../Game/GameManager")
-	death_msg += "Day number: " + str(game_manager.get_day_num()) + "\n"
-	death_msg += "Money: $" + str(game_manager.get_money()) + "\n"
-	death_msg += "Air quality " + str(game_manager.get_current_atm()) + " AQI\n"
-	death_msg += "Current energy " + str(game_manager.get_current_energy()) + " MW\n"
-	death_msg += "Required energy " + str(game_manager.get_day_num() * 100) + " MW\n"
+	var flash = preload("res://Scenes/Game.tscn")
+	print(flash.get_path())
+	var game_manager = get_node(flash.get_path())
+	#death_msg += "Day number: " + str(game_manager.get_day_num()) + "\n"
+	#death_msg += "Money: $" + str(game_manager.get_money()) + "\n"
+	#death_msg += "Air quality " + str(game_manager.get_current_atm()) + " AQI\n"
+	#death_msg += "Current energy " + str(game_manager.get_current_energy()) + " MW\n"
+	#death_msg += "Required energy " + str(game_manager.get_day_num() * 100) + " MW\n"
 	
 	$Label.text = death_msg
 

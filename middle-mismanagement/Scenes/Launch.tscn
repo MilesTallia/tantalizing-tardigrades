@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://pka571suyydr"]
+
+[ext_resource type="Script" path="res://Scripts/Launch.gd" id="1_gyeux"]
+[ext_resource type="FontFile" path="res://art/origa___.ttf" id="2_wnrcn"]
+[ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="3_fya1g"]
+[ext_resource type="PackedScene" uid="uid://c84w0aybdhreb" path="res://Scenes/Folder.tscn" id="4_6xkuw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iuyox"]
+
+[sub_resource type="Animation" id="Animation_8tqhp"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y15yn"]
+_data = {
+"new_animation": SubResource("Animation_8tqhp")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nusbh"]
+
+[node name="Launch" type="Node2D"]
+script = ExtResource("1_gyeux")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -489.0
+offset_top = -280.0
+offset_right = 540.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_wnrcn")
+theme_override_font_sizes/font_size = 88
+text = "Middle Mismanagement"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 297.0
+offset_top = 211.0
+offset_right = 521.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="NewGame" type="Button" parent="."]
+offset_left = -377.0
+offset_top = 14.0
+offset_right = -79.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+
+[node name="Tutorial" type="Button" parent="."]
+offset_left = 75.0
+offset_top = 19.0
+offset_right = 371.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 40
+text = "Tutorial"
+
+[node name="Credits" type="Button" parent="."]
+offset_left = -521.0
+offset_top = 211.0
+offset_right = -282.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+light_mask = 512
+visibility_layer = 512
+z_index = -4096
+position = Vector2(7, 27)
+scale = Vector2(0.291912, 0.231445)
+texture = ExtResource("3_fya1g")
+
+[node name="Folder" parent="." instance=ExtResource("4_6xkuw")]
+z_index = -1000
+position = Vector2(-400, -155)
+script = null
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Folder"]
+shape = SubResource("CircleShape2D_iuyox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Folder"]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_y15yn")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Folder"]
+sprite_frames = SubResource("SpriteFrames_nusbh")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
