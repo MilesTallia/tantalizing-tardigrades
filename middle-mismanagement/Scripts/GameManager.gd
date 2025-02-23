@@ -60,6 +60,9 @@ func start_day() -> void:
 	set_day_num(day_num + 1)
 	var debrief_page = get_node("..//DebriefPage")
 	debrief_page.set_text()
+	var i : int = 0
+	while i < num_folders:
+		
 	# get folders
 	#display folders
 	

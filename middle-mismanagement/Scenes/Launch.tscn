@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://pka571suyydr"]
+[gd_scene load_steps=8 format=3 uid="uid://pka571suyydr"]
 
 [ext_resource type="Script" path="res://Scripts/Launch.gd" id="1_gyeux"]
-[ext_resource type="FontFile" path="res://art/origa___.ttf" id="2_wnrcn"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="3_fya1g"]
 [ext_resource type="PackedScene" uid="uid://c84w0aybdhreb" path="res://Scenes/Folder.tscn" id="4_6xkuw"]
 
@@ -52,7 +51,6 @@ offset_top = -280.0
 offset_right = 540.0
 offset_bottom = 88.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_wnrcn")
 theme_override_font_sizes/font_size = 88
 text = "Middle Mismanagement"
 
