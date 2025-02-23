@@ -72,9 +72,11 @@ func start_day() -> void:
 	if day_num < 4:
 		diff = 1
 	elif day_num < 7:
+		diff = 3
+	elif day_num < 11:
 		diff = 2
 	else:
-		diff = 3
+		diff = 4
 	var debrief_page = get_node("..//DebriefPage")
 	debrief_page.set_text()
 	var i : int = 0

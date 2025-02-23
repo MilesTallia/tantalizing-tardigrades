@@ -12,7 +12,7 @@ var chosen = false
 var open = false
 var hasPapers = true
 
-var difficulty = 4
+var difficulty = 2
 var good = true
 var company = "<<Company>>"
 var stamped = false;
