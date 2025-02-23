@@ -72,9 +72,11 @@ func start_day() -> void:
 	if day_num < 4:
 		diff = 1
 	elif day_num < 7:
+		diff = 3
+	elif day_num < 11:
 		diff = 2
 	else:
-		diff = 3
+		diff = 4
 	var debrief_page = get_node("..//DebriefPage")
 	debrief_page.set_text()
 	var i : int = 0
@@ -90,13 +92,13 @@ func start_day() -> void:
 		folder.good = dir
 		if dir and diff == 1:
 			folder.company = eco_freindly_companies.pick_random()
-		elif dir and diff == 2:
+		elif dir and diff == 3:
 			folder.company = normal_renewable_companies.pick_random()
 		elif !dir and diff == 1:
 			folder.company = ominous_companies.pick_random()
-		elif !dir and diff == 2:
+		elif !dir and diff == 3:
 			folder.company = shady_companies.pick_random()
-		elif diff == 3:
+		elif diff == 2 or diff > 3:
 			folder.company = vague_companies.pick_random()
 		get_parent().add_child(folder)
 		folder.position += Vector2(0, 90* i + 100)
@@ -108,6 +110,10 @@ func start_day() -> void:
 
 	
 func end_day() -> void:
+	var screen = get_node("..//ColorRect")
+	screen.show()
+	await get_tree().create_timer(3).timeout
+	screen.hide()
 	for folder in array_folders:
 		get_parent().remove_child(folder)
 		if folder.passed:

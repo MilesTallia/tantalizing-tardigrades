@@ -45,7 +45,7 @@ text = "You are head of the energy department at Kalamazoo.
 You will be presented folders with project proposals.
 Each day you must go through all of the folders and approve or deny them in the given amount of time.
 This is done by Dragging the stamps over pages and either left clicking or hitting space bar.
-Folders have consequences, some might cost or gain money, change the air quality, or generate more energy
+Some projects might cost or provide money, alter the rate that air quality changes, or generate more energy
 When all of the folders are either approved or denied, the day will end.
 Each day  money, air quality, and energy production will be visable in a page in the top right of the game.
 The game will end when money goes below zero, the air quality is too poor, or the energy production is too low.
