@@ -58,14 +58,6 @@ func set_values(project, aqi, cost, output):
 		$Budget.set_value(Color("red"))
 	$Output.set_child_text(output)
 	$Output.set_value(Color(0,0,0))	
-	
-func _ready():
-	var version = rng.randf_range(0, 10)
-	if (version <= 5):
-		rand(true)
-	else:
-		rand(false)
-
 
 
 
