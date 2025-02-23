@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6npjjdfpond"]
+[gd_scene load_steps=10 format=3 uid="uid://c6npjjdfpond"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_mrqer"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3_emqkc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="5_80lc0"]
 [ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_fhp41"]
 [ext_resource type="PackedScene" uid="uid://chrbb5lhfurpa" path="res://Scenes/Pages/Presets/Basic2.tscn" id="7_irfgq"]
+[ext_resource type="PackedScene" uid="uid://olsho8scxxxe" path="res://Scenes/FailStamp.tscn" id="7_ixo6o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks7s2"]
 radius = 2.52616
@@ -33,19 +34,15 @@ position = Vector2(856, 386)
 [node name="Paper" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(655, 207)
 
-[node name="OkStamp" parent="." instance=ExtResource("4_jn7p2")]
-position = Vector2(458, 158)
-collision_layer = 2
-
-[node name="OkStamp2" parent="." instance=ExtResource("4_jn7p2")]
-collision_layer = 2
-
 [node name="Folder" parent="." instance=ExtResource("6_fhp41")]
 position = Vector2(426, 336)
-collision_layer = 10
 
 [node name="Page2" parent="." instance=ExtResource("7_irfgq")]
 position = Vector2(805, 343)
+
+[node name="OkStamp2" parent="." instance=ExtResource("7_ixo6o")]
+
+[node name="OkStamp" parent="." instance=ExtResource("4_jn7p2")]
 
 [editable path="Paper"]
 [editable path="Folder"]

@@ -7,7 +7,7 @@
 size = Vector2(218, 279)
 
 [node name="Folder" type="CharacterBody2D"]
-collision_layer = 2
+collision_layer = 10
 input_pickable = true
 script = ExtResource("1_yg38n")
 
@@ -60,6 +60,17 @@ offset_bottom = 111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_rekv7")
 theme_override_font_sizes/font_size = 25
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 183.0
+offset_right = 121.0
+offset_bottom = 218.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_rekv7")
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 2
 
 [connection signal="mouse_entered" from="." to="." method="mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="mouse_exited"]
