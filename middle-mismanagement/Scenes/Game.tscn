@@ -22,12 +22,12 @@ script = ExtResource("2")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1000
-position = Vector2(571, 331)
-scale = Vector2(0.611328, 0.611328)
+position = Vector2(1024.66, 512.5)
+scale = Vector2(0.555066, 0.450846)
 texture = ExtResource("7_aihta")
 
 [node name="OkStamp" parent="." instance=ExtResource("3_yquht")]
-position = Vector2(725, 579)
+position = Vector2(1713, 952)
 
 [node name="PaperGetter" type="Area2D" parent="."]
 collision_mask = 2
@@ -59,10 +59,7 @@ script = ExtResource("4_icqku")
 [node name="NamePlate" parent="." instance=ExtResource("6_s4b2g")]
 
 [node name="OkStamp2" parent="." instance=ExtResource("9_aehwd")]
-position = Vector2(384, 576)
-
-[node name="Label" parent="OkStamp2" index="3"]
-mouse_filter = 2
+position = Vector2(1415, 944)
 
 [node name="Clock" parent="." instance=ExtResource("10_3bgtx")]
 position = Vector2(348, 11)
