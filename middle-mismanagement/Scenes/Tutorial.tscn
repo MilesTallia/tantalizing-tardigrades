@@ -92,3 +92,5 @@ text = "You can double click folders and papers.
 Folders will open, papers will zoom."
 
 [editable path="Game"]
+[editable path="Game/OkStamp2"]
+[editable path="Game/Clock"]
