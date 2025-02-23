@@ -53,6 +53,7 @@ offset_top = -120.0
 offset_right = 422.0
 offset_bottom = -55.0
 text = ""
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" parent="Labels/Title" index="0"]
 offset_left = 0.0

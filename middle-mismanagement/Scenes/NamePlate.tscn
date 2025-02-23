@@ -1,5 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cucwululgubay"]
 
+
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_7q3ed"]
 [ext_resource type="Script" path="res://Scripts/NamePlate.gd" id="1_t8dko"]
 [ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="2_o6jr4"]
