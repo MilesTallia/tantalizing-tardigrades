@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d05qjknob0sqr"]
+[gd_scene load_steps=7 format=3 uid="uid://d05qjknob0sqr"]
 
 [ext_resource type="Script" path="res://Scripts/Credit.gd" id="1_5asr8"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="1_hv51m"]
+[ext_resource type="Texture2D" uid="uid://wvetycemseon" path="res://Assets/Miles.jpg" id="3_27y2f"]
+[ext_resource type="Texture2D" uid="uid://udyhy3tgl5ei" path="res://Assets/Gabriel.jpg" id="4_smvos"]
+[ext_resource type="Texture2D" uid="uid://ctb5olyw4nsms" path="res://Assets/Andrew.jpeg" id="5_qg8a2"]
+[ext_resource type="Texture2D" uid="uid://cn7c4hg6y7hxh" path="res://Assets/Max.jpg" id="6_qfbae"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_5asr8")
@@ -15,22 +19,6 @@ position = Vector2(0.749981, 5.74999)
 scale = Vector2(0.288848, 0.217611)
 texture = ExtResource("1_hv51m")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -524.0
-offset_top = -290.0
-offset_right = 432.0
-offset_bottom = 229.0
-theme_override_font_sizes/font_size = 40
-text = "The team:
-Andrew DiMauro
-Gabriel Williams
-Max Rimlinger
-Miles Tallia
-Here in spirit:
-The Queen
-The Pope
-Lemon"
-
 [node name="Back" type="Button" parent="."]
 offset_left = 285.0
 offset_top = 206.0
@@ -38,7 +26,68 @@ offset_right = 523.0
 offset_bottom = 294.0
 theme_override_font_sizes/font_size = 40
 text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="Miles" type="Button" parent="."]
+offset_left = -178.0
+offset_top = -87.0
+offset_right = -17.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 30
+text = "Miles"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Miles"]
+position = Vector2(179, -112)
+scale = Vector2(0.109896, 0.109896)
+texture = ExtResource("3_27y2f")
+
+[node name="Gabriel" type="Button" parent="."]
+offset_left = 187.0
+offset_top = -87.0
+offset_right = 348.0
+offset_bottom = -21.0
+theme_override_font_sizes/font_size = 30
+text = "Gabriel"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Gabriel"]
+position = Vector2(172, -111)
+scale = Vector2(0.612179, 0.612179)
+texture = ExtResource("4_smvos")
+
+[node name="Andrew" type="Button" parent="."]
+offset_left = -438.0
+offset_top = 203.0
+offset_right = -277.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 30
+text = "Andrew"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Andrew"]
+position = Vector2(172, -111)
+scale = Vector2(0.332609, 0.332609)
+texture = ExtResource("5_qg8a2")
+
+[node name="Max" type="Button" parent="."]
+offset_left = -73.0
+offset_top = 203.0
+offset_right = 88.0
+offset_bottom = 269.0
+theme_override_font_sizes/font_size = 30
+text = "Max"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Max"]
+position = Vector2(187, -108)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("6_qfbae")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Miles" to="." method="_on_miles_pressed"]
+[connection signal="pressed" from="Gabriel" to="." method="_on_gabriel_pressed"]
+[connection signal="pressed" from="Andrew" to="." method="_on_andrew_pressed"]
+[connection signal="pressed" from="Max" to="." method="_on_max_pressed"]
