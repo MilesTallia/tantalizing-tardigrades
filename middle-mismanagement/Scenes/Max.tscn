@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="3_a5jtb"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="5_hjpsv"]
 [ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_76yb5"]
-[ext_resource type="PackedScene" uid="uid://cdlv1hamqk7o8" path="res://Scenes/Clock.tscn" id="8_qmiim"]
+[ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="8_qmiim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvvn5"]
 radius = 2.52616
