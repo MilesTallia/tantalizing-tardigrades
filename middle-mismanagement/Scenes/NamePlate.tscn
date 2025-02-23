@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bspfi0c7qs6ve"]
+[gd_scene load_steps=5 format=3 uid="uid://bspfi0c7qs6ve"]
 
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_7q3ed"]
 [ext_resource type="Script" path="res://Scripts/NamePlate.gd" id="1_t8dko"]
+[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="2_o6jr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_misb8"]
-size = Vector2(498.298, 113.597)
+size = Vector2(293.298, 60.597)
 
 [node name="NamePlate" type="CharacterBody2D"]
 collision_layer = 2
@@ -12,27 +13,32 @@ input_pickable = true
 script = ExtResource("1_7q3ed")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 500.0
-offset_bottom = 116.0
+offset_right = 292.0
+offset_bottom = 63.0
 mouse_filter = 1
 color = Color(0.311144, 0.208912, 0.120221, 1)
 
 [node name="LineEdit" type="LineEdit" parent="."]
-offset_left = 15.0
-offset_top = 14.0
-offset_right = 484.0
-offset_bottom = 102.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 285.0
+offset_bottom = 56.0
 focus_mode = 1
 mouse_filter = 1
-theme_override_font_sizes/font_size = 47
+theme_override_fonts/font = ExtResource("2_o6jr4")
+theme_override_font_sizes/font_size = 21
 placeholder_text = "Your Name Here"
 alignment = 1
 script = ExtResource("1_t8dko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(248.851, 58.2015)
+position = Vector2(146.351, 31.7015)
 shape = SubResource("RectangleShape2D_misb8")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.270224, 0.17912, 0.101992, 1)
+polygon = PackedVector2Array(292, 1, 300, 52, 292, 52)
 
 [connection signal="mouse_entered" from="." to="." method="mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="mouse_exited"]
