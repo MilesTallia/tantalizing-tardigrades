@@ -35,9 +35,10 @@ func _input(event):
 				dragging = true
 				newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 				if event.double_click:
-					scale = Vector2(2,2)
+					scale = Vector2(3,3)
 					old_position = position
-					position = Vector2(DisplayServer.window_get_size().x/2,DisplayServer.window_get_size().y/2)
+					print(DisplayServer.window_get_size())
+					#position = Vector2((DisplayServer.window_get_size().x)/2,(DisplayServer.window_get_size().y)/2)
 					dragging = false
 					zoomed = true
 			else:
