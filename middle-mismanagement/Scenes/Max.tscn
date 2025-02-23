@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bme44yvjdw26"]
+[gd_scene load_steps=8 format=3 uid="uid://bme44yvjdw26"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_mopai"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="2_w2nju"]
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="3_a5jtb"]
-[ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="4_yq5hc"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="5_hjpsv"]
 [ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_76yb5"]
 [ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="8_qmiim"]
@@ -25,15 +24,6 @@ script = ExtResource("3_a5jtb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DragableIndexGetter"]
 shape = SubResource("CircleShape2D_kvvn5")
-
-[node name="Paper2" parent="." instance=ExtResource("4_yq5hc")]
-position = Vector2(759, 261)
-
-[node name="Paper3" parent="." instance=ExtResource("4_yq5hc")]
-position = Vector2(797, 393)
-
-[node name="Paper" parent="." instance=ExtResource("4_yq5hc")]
-position = Vector2(954, 399)
 
 [node name="NamePlate" parent="." instance=ExtResource("5_hjpsv")]
 position = Vector2(31, 23)

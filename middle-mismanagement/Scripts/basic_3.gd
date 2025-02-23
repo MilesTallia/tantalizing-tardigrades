@@ -55,16 +55,29 @@ func set_values():
 	
 	
 	$Title.set_child_text(proj)
-	$Graph.Xmin = "0"
-	$Graph.Ymin = "0"
-	$Graph.Xmax = "1"
-	$Graph.Ymax = str(aqi)
-	$Graph.Xunit = "Time"
-	$Graph.Yunit = "AQI"
-	if aqi > 0:
-		$Graph.direction = "up"
+	if (randf() > 0.5):
+		$Graph.Xmin = "0"
+		$Graph.Ymin = "0"
+		$Graph.Xmax = str(snapped(randf() * 7, 0.01))
+		$Graph.Ymax = str(aqi)
+		$Graph.Xunit = "Time"
+		$Graph.Yunit = "AQI"
+		if aqi > 0:
+			$Graph.direction = "up"
+		else:
+			$Graph.direction = "down"
 	else:
-		$Graph.direction = "down"
+		# flipped
+		$Graph.Xmin = "0"
+		$Graph.Ymin = str(snapped(randf() * 7, 0.01))
+		$Graph.Xmax = str(aqi)
+		$Graph.Ymax = "0"
+		$Graph.Xunit = "AQI"
+		$Graph.Yunit = "Time"
+		if aqi > 0:
+			$Graph.direction = "down"
+		else:
+			$Graph.direction = "up"
 	$Graph.loadValues()
 	
 	var dupePage = load("res://Scenes/Pages/Presets/Basic3Dummy.tscn")
@@ -73,16 +86,29 @@ func set_values():
 	dupePageInst.position = get_parent().position + Vector2(50,50)
 	
 	dupePageInst.get_child(3).get_child(1).set_child_text(proj)
-	dupePageInst.get_child(3).get_child(2).Xmin = "0"
-	dupePageInst.get_child(3).get_child(2).Ymin = "0"
-	dupePageInst.get_child(3).get_child(2).Xmax = "1"
-	dupePageInst.get_child(3).get_child(2).Ymax = str(cost)
-	dupePageInst.get_child(3).get_child(2).Xunit = "Time"
-	dupePageInst.get_child(3).get_child(2).Yunit = "Budget"
-	if cost > 0:
-		dupePageInst.get_child(3).get_child(2).direction = "up"
+	if (randf() > 0.5):
+		dupePageInst.get_child(3).get_child(2).Xmin = "0"
+		dupePageInst.get_child(3).get_child(2).Ymin = "0"
+		dupePageInst.get_child(3).get_child(2).Xmax = str(snapped(randf() * 7, 0.01))
+		dupePageInst.get_child(3).get_child(2).Ymax = str(cost)
+		dupePageInst.get_child(3).get_child(2).Xunit = "Time"
+		dupePageInst.get_child(3).get_child(2).Yunit = "Budget"
+		if cost > 0:
+			dupePageInst.get_child(3).get_child(2).direction = "up"
+		else:
+			dupePageInst.get_child(3).get_child(2).direction = "down"
 	else:
-		dupePageInst.get_child(3).get_child(2).direction = "down"
+		# flipped
+		dupePageInst.get_child(3).get_child(2).Xmin = "0"
+		dupePageInst.get_child(3).get_child(2).Ymin = str(snapped(randf() * 7, 0.01))
+		dupePageInst.get_child(3).get_child(2).Xmax = str(cost)
+		dupePageInst.get_child(3).get_child(2).Ymax = "0"
+		dupePageInst.get_child(3).get_child(2).Xunit = "Budget"
+		dupePageInst.get_child(3).get_child(2).Yunit = "Time"
+		if cost > 0:
+			dupePageInst.get_child(3).get_child(2).direction = "down"
+		else:
+			dupePageInst.get_child(3).get_child(2).direction = "up"
 	dupePageInst.get_child(3).get_child(2).loadValues()
 	
 	var dupePage2 = load("res://Scenes/Pages/Presets/Basic3Dummy.tscn")
@@ -91,16 +117,29 @@ func set_values():
 	dupePageInst2.position = get_parent().position + Vector2(100,100)
 	
 	dupePageInst2.get_child(3).get_child(1).set_child_text(proj)
-	dupePageInst2.get_child(3).get_child(2).Xmin = "0"
-	dupePageInst2.get_child(3).get_child(2).Ymin = "0"
-	dupePageInst2.get_child(3).get_child(2).Xmax = "1"
-	dupePageInst2.get_child(3).get_child(2).Ymax = str(output)
-	dupePageInst2.get_child(3).get_child(2).Xunit = "Time"
-	dupePageInst2.get_child(3).get_child(2).Yunit = "Output"
-	if output > 0:
-		dupePageInst2.get_child(3).get_child(2).direction = "up"
+	if (randf() > 0.5):
+		dupePageInst2.get_child(3).get_child(2).Xmin = "0"
+		dupePageInst2.get_child(3).get_child(2).Ymin = "0"
+		dupePageInst2.get_child(3).get_child(2).Xmax = str(snapped(randf() * 7, 0.01))
+		dupePageInst2.get_child(3).get_child(2).Ymax = str(output)
+		dupePageInst2.get_child(3).get_child(2).Xunit = "Time"
+		dupePageInst2.get_child(3).get_child(2).Yunit = "Output"
+		if cost > 0:
+			dupePageInst2.get_child(3).get_child(2).direction = "up"
+		else:
+			dupePageInst2.get_child(3).get_child(2).direction = "down"
 	else:
-		dupePageInst2.get_child(3).get_child(2).direction = "down"
+		# flipped
+		dupePageInst2.get_child(3).get_child(2).Xmin = "0"
+		dupePageInst2.get_child(3).get_child(2).Ymin = str(snapped(randf() * 7, 0.01))
+		dupePageInst2.get_child(3).get_child(2).Xmax = str(output)
+		dupePageInst2.get_child(3).get_child(2).Ymax = "0"
+		dupePageInst2.get_child(3).get_child(2).Xunit = "Output"
+		dupePageInst2.get_child(3).get_child(2).Yunit = "Time"
+		if cost > 0:
+			dupePageInst2.get_child(3).get_child(2).direction = "down"
+		else:
+			dupePageInst2.get_child(3).get_child(2).direction = "up"
 	dupePageInst2.get_child(3).get_child(2).loadValues()
 
 
@@ -112,47 +151,58 @@ func set_values():
 
 
 var ominous_projects = [
-	"Strategic Defoliation\nInitiative",
-	"Deep Bore Nuclear\nWaste Storage",
-	"Experimental Seismic\nTesting (Fracking)",
-	"Remote Arctic Resource\nExploitation",
-	"Unregulated Deep-Sea\nMining",
-	"Forced Relocation for\nDam Construction",
-	"Large-Scale Incineration\nProject",
-	"Controversial Pesticide\nDeployment",
-	"Offshore Oil Platform\nExpansion",
-	"Unmonitored Chemical\nWaste Discharge",
-	"Tax Haven Resource\nTransfer",
-	"Lobby-Driven Regulatory\nExemption",
-	"Subsidized Fossil Fuel\nInfrastructure",
-	"Offshore Data Storage\n(for tax evasion)",
-	"Non-Disclosure Agreement\nLand Acquisition",
-	"Strategic Price Fixing\nInitiative",
-	"Environmental Impact\nReport Suppression",
-	"Delayed Infrastructure\nMaintenance",
-	"Political Campaign\nFunding (lobbying)",
-	"Contract Bid Rigging"
+	"Apex Global\nEnergy Solutions",
+	"Core Dynamic\nPower Systems",
+	"Unified Energy\nSpectrum",
+	"Vector Resource\nGroup",
+	"Nexus Applied\nEnergy",
+	"Prime Integrated\nPower",
+	"Global Spectrum\nEnergy",
+	"Dominion Energy\nMatrix",
+	"Catalyst Advanced\nPower",
+	"Strategic Energy\nFramework",
+	"Pinnacle Resource\nDynamics",
+	"Meridian Energy\nTechnologies",
+	"Frontier Power\nIntegration",
+	"Zenith Applied\nResources",
+	"Vanguard Energy\nSpectrum",
+	"Alpha Resource\nDynamics",
+	"Beta Integrated\nPower",
+	"Gamma Spectrum\nEnergy",
+	"Delta Energy\nMatrix",
+	"Epsilon Advanced\nPower",
+	"Sigma Resource\nFramework",
+	"Theta Resource\nDynamics",
+	"Lambda Integrated\nPower",
+	"Omega Spectrum\nEnergy"
 ]
 
 var eco_friendly_projects = [
-	"Community Solar\nMicrogrid Implementation",
-	"Urban Green Roof\nExpansion",
-	"Coastal Wetland\nRestoration Project",
-	"Reforestation and\nNative Species Planting",
-	"Public Transportation\nElectrification",
-	"Sustainable Agriculture\nand Food Distribution",
-	"Wildlife Corridor\nDevelopment",
-	"Water Conservation and\nPurification Initiative",
-	"Renewable Energy\nStorage Deployment",
-	"Habitat Restoration and\nInvasive Species Removal",
-	"Solar Farm Construction",
-	"Wind Turbine Installation",
-	"Hydroelectric Dam Upgrade",
-	"Geothermal Energy Plant\nDevelopment",
-	"Biomass Energy Facility\nConstruction",
-	"Renewable Energy Grid\nInterconnection",
-	"Energy Efficiency\nImprovement Program",
-	"Sustainable Building\nConstruction",
-	"Electric Vehicle\nCharging Infrastructure",
-	"Smart Grid Technology \nDeployment"
+	"Kappa Energy\nMatrix",
+	"Psi Advanced\nPower",
+	"Rho Resource\nFramework",
+	"Tau Resource\nDynamics",
+	"Upsilon Integrated\nPower",
+	"Chi Spectrum\nEnergy",
+	"Phi Energy\nMatrix",
+	"Shell Corp\nEnergies",
+	"Energy Solutions\nGroup LLC",
+	"Power Systems\nInternational",
+	"Resource Dynamics\nCorporation",
+	"Advanced Energy\nHoldings",
+	"Integrated Power\nVentures",
+	"Global Energy\nTechnologies",
+	"Strategic Resource\nSystems",
+	"Dynamic Power\nSolutions",
+	"Applied Energy\nConcepts",
+	"Spectrum Resource\nManagement",
+	"Energy Matrix\nPartners",
+	"Resource Framework\nDynamics",
+	"Integrated Systems\nEnergy",
+	"Power Spectrum\nHoldings",
+	"Resource Dynamics\nInternational",
+	"Energy Solutions\nCorporation",
+	"Power Systems\nVentures",
+	"Resource Holdings\nGroup",
+	"Energy Technologies\nLLC"
 ]
