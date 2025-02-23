@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="2_1pskt"]
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="2_fsw0r"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="4_1nwx2"]
-[ext_resource type="PackedScene" uid="uid://c84w0aybdhreb" path="res://Scenes/Folder.tscn" id="5_ny0nx"]
+[ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="5_ny0nx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvvn5"]
 radius = 2.52616
