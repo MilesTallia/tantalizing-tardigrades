@@ -6,11 +6,12 @@ var running = false
 var finished = false
 
 func start(time_seconds: int) -> void:
+	cur_time = 0
 	end_time = float(time_seconds + 1)
 	running = true
+	finished = false
+
 	
-func _ready() -> void:
-	start(3);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,7 +25,8 @@ func _process(delta: float) -> void:
 			# blink off
 			$Label.add_theme_color_override("font_color", "RED")
 		if cur_time >= end_time + 3.0:
-			# call GameManager to say that we ended
+			var gamemanager = get_parent().get_node("..//GameManager")
+			gamemanager.end_day()
 			pass
 	elif running:		
 		# update display

@@ -3,9 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_mopai"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="2_w2nju"]
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="3_a5jtb"]
+[ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="4_yq5hc"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="5_hjpsv"]
 [ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_76yb5"]
-[ext_resource type="PackedScene" uid="uid://cdlv1hamqk7o8" path="res://Scenes/Clock.tscn" id="8_qmiim"]
+[ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="8_qmiim"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvvn5"]
 radius = 2.52616

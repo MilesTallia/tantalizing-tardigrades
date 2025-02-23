@@ -64,6 +64,7 @@ func spawn_pages():
 	var page = load("res://Scenes/Pages/Presets/Basic" + str(difficulty) + ".tscn")
 	var pageInst = page.instantiate()
 	pageInst.position = position
+	pageInst.z_index = z_index + 1
 	get_parent().add_child(pageInst)
 	var values = []
 	if (good):
@@ -80,11 +81,17 @@ func get_stamped(stamp: bool):
 	if (stamped != true):
 		stamped = true
 		passed = stamp
-		if get_node("GameManager"):
-			get_node("GameManager").folder_stamped()
+		if passed == true:
+			$Label2.set_text("Passed")
+			$Label2.add_theme_color_override("font_color", Color("green"))
+		if passed == false:
+			$Label2.set_text("Failed")
+			$Label2.add_theme_color_override("font_color", Color("red"))
+		var gamemanager = get_node("..//GameManager")
+		gamemanager.folder_stamped()
 		
 func get_stats():
-	return [aqi, cost, output]
+	return [snapped(aqi, 0.01), snapped(cost, 0.01), snapped(output, 0.01)]
 
 func chosenVal():
 	chosen = true
