@@ -10,6 +10,7 @@ var num_folders : int = 3
 var array_folders = []
 var diff: int = 0
 var num_stamped: int  = 0
+var rng = RandomNumberGenerator.new()
 
 func get_day_num() -> int:
 	return day_num
@@ -66,17 +67,28 @@ func start_day() -> void:
 		clock.start(360 - day_num * 10)
 	for child in get_tree().get_nodes_in_group("page"):
 		child.queue_free()
-	array_folders.resize(num_folders)
+	
 	num_stamped = 0
 	set_day_num(day_num + 1)
-	if day_num < 4:
-		diff = 1
+	var diffs = [1, 3, 2, 4]
+	var weights = PackedFloat32Array([8, 0, 0, 0])
+	if day_num < 3:
+		weights = PackedFloat32Array([6, 2, 0, 0])
+	elif day_num < 5:
+		weights = PackedFloat32Array([4, 4, 0, 0])
 	elif day_num < 7:
-		diff = 3
-	elif day_num < 11:
-		diff = 2
-	else:
-		diff = 4
+		weights = PackedFloat32Array([4, 3, 2, 0])
+	elif day_num < 10:
+		num_folders = 4
+	elif day_num < 13:
+		weights = PackedFloat32Array([3, 3, 3, 0])
+	elif day_num < 16:
+		weights = PackedFloat32Array([4, 4, 4, 2])
+	elif day_num < 19:
+		weights = PackedFloat32Array([4, 4, 4, 4])
+		num_folders = 5
+		
+	array_folders.resize(num_folders)
 	var debrief_page = get_node("..//DebriefPage")
 	debrief_page.set_text()
 	var i : int = 0
@@ -85,7 +97,7 @@ func start_day() -> void:
 	while i < num_folders:
 		var folder = FOLDER.instantiate()
 		await get_tree().create_timer(0).timeout
-		folder.difficulty = diff
+		folder.difficulty = diffs[rng.rand_weighted(weights)]
 		var dir = true
 		if randi() % 2:
 			dir = false 
