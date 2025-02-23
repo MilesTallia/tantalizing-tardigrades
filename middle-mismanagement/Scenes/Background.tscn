@@ -39,4 +39,3 @@ position = Vector2(954, 399)
 
 [node name="Folder" parent="." instance=ExtResource("5_ny0nx")]
 position = Vector2(207, 269)
-script = ExtResource("6_ufioi")

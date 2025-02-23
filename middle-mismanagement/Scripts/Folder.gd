@@ -12,6 +12,7 @@ var chosen = false
 var open = false
 var hasPapers = true
 
+var difficulty = 1
 var good = true
 var company = "<<Company>>"
 var stamped = false;
@@ -27,7 +28,7 @@ func _input(event):
 				
 				
 				if !open and hasPapers:
-					spawn_pages(good)
+					spawn_pages()
 				
 				hasPapers = false
 				$"Closed Folder/Paper".visible = false
@@ -54,11 +55,18 @@ func _physics_process(delta):
 		set_velocity((newPosition - position) * Vector2(30, 30))
 		move_and_slide()
 	
-func assign_company(good : bool):
-	return
-	
-func spawn_pages(good : bool):
-	return
+func spawn_pages():
+	var page = load("res://Scenes/Pages/Presets/Basic" + str(difficulty) + ".tscn")
+	var pageInst = page.instantiate()
+	pageInst.position = position
+		
+	if (good):
+		print(pageInst.get_child(3))
+		pageInst.get_child(3).rand(true)
+	else:
+		pageInst.get_child(3).rand(false)
+		
+	get_parent().add_child(pageInst)
 
 func chosenVal():
 	chosen = true
@@ -70,4 +78,4 @@ func mouse_exited():
 	mouse_in = false
 
 func _ready():
-	assign_company(good)
+	$Label.set_text(company)
