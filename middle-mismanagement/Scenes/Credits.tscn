@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d05qjknob0sqr"]
+
+[ext_resource type="Script" path="res://Scripts/Credit.gd" id="1_5asr8"]
+[ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="1_hv51m"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_5asr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+light_mask = 512
+visibility_layer = 512
+z_index = -4096
+position = Vector2(0.749981, 5.74999)
+scale = Vector2(0.288848, 0.217611)
+texture = ExtResource("1_hv51m")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -524.0
+offset_top = -290.0
+offset_right = 432.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 40
+text = "The team:
+Andrew DiMauro
+Gabriel Williams
+Max Rimlinger
+Miles Tallia
+Here in spirit:
+The Queen
+The Pope
+Lemon"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 285.0
+offset_top = 206.0
+offset_right = 523.0
+offset_bottom = 294.0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
