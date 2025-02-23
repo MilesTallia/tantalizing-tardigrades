@@ -70,6 +70,7 @@ func start_day() -> void:
 	
 	num_stamped = 0
 	set_day_num(day_num + 1)
+
 	var diffs = [1, 3, 2, 4]
 	var weights = PackedFloat32Array([8, 0, 0, 0])
 	if day_num < 3:
@@ -85,7 +86,7 @@ func start_day() -> void:
 	elif day_num < 16:
 		weights = PackedFloat32Array([4, 4, 4, 2])
 	elif day_num < 19:
-		weights = PackedFloat32Array([4, 4, 4, 4])
+		weights = PackedFloat32Array([2, 3, 4, 5])
 		num_folders = 5
 		
 	array_folders.resize(num_folders)
@@ -98,6 +99,7 @@ func start_day() -> void:
 		var folder = FOLDER.instantiate()
 		await get_tree().create_timer(0).timeout
 		folder.difficulty = diffs[rng.rand_weighted(weights)]
+		rng.randomize()
 		var dir = true
 		if randi() % 2:
 			dir = false 
@@ -124,7 +126,7 @@ func start_day() -> void:
 func end_day() -> void:
 	var screen = get_node("..//ColorRect")
 	screen.show()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	screen.hide()
 	for folder in array_folders:
 		get_parent().remove_child(folder)
