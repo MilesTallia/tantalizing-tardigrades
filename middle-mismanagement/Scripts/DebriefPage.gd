@@ -29,7 +29,7 @@ func _physics_process(delta):
 		move_and_slide()
 
 func set_text():
-	var gameManager = get_node("..//GameManger")
+	var gameManager = get_node("..//GameManager")
 	var debrief_test:String = ""
 	debrief_test += "Day number: " + str(gameManager.get_day_num()) + "\n"
 	debrief_test += "Money: $" + str(gameManager.get_money()) + "\n"

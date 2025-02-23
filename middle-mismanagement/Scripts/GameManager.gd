@@ -54,6 +54,7 @@ func get_array_folders():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_day()
+	end_game()
 	
 	
 func start_day() -> void:
@@ -68,27 +69,18 @@ func end_day() -> void:
 		money.set(money + folder.get)
 	
 	if (money < 0):
-		end_money()
+		end_game()
 	elif (current_atm > 200):
-		end_atm()
+		end_game()
 	elif (current_energy < day_num * 50):
-		end_energy()
+		end_game()
 	else:
 		start_day()
 
-func end_money() -> void:
-	#do stuff
-	end_game()
-	
-func end_atm() -> void:
-	#do stuff
-	end_game()
-	
-func end_energy() -> void:
-	#do stuff
-	end_game()
-
 func end_game():
+	print(get_path())
+	
+	get_tree().change_scene_to_file("res://Scenes/Death.tscn")
 	#change scene to end game
 	return; 
 

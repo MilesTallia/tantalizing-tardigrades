@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddfkkga4371h0"]
+
+[ext_resource type="Script" path="res://Scripts/DeathDisplay.gd" id="1_8u7nt"]
+
+[node name="Death" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_8u7nt")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "Hi"
