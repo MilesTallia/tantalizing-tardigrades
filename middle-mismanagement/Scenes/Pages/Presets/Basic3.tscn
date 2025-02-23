@@ -1,15 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3bf54m6mt2ea"]
+[gd_scene load_steps=7 format=3 uid="uid://4b1853hibby8"]
 
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_1s1l3"]
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="2_ax5en"]
 [ext_resource type="Script" path="res://Scripts/basic_3.gd" id="3_xoknt"]
 [ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="4_a3v5d"]
-[ext_resource type="PackedScene" uid="uid://byfulycgqe12m" path="res://Scenes/Graph.tscn" id="5_4e0cn"]
+[ext_resource type="PackedScene" uid="uid://bp8ex58v2rwg0" path="res://Scenes/Graph.tscn" id="5_4e0cn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)
 
-[node name="Page2" type="CharacterBody2D" groups=["page"]]
+[node name="Page3" type="CharacterBody2D" groups=["page"]]
 collision_layer = 2
 input_pickable = true
 script = ExtResource("1_1s1l3")
