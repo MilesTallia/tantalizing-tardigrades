@@ -54,7 +54,6 @@ func get_array_folders():
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_day()
-	end_game()
 	
 	
 func start_day() -> void:

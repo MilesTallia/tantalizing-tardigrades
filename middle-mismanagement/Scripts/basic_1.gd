@@ -1,8 +1,9 @@
-extends Node2D
+extends Node
 
 var rng = RandomNumberGenerator.new()
 
 func rand(good : bool):
+	print(3)
 	if (good == true):
 		randomize_good()
 	else:
@@ -42,6 +43,7 @@ func randomize_aqi_reducer():
 	
 
 func set_values(project, aqi, cost, output):
+	print(4)
 	aqi = snapped(aqi, 0.01)
 	cost = snapped(cost, 0.01)
 	output = snapped(output, 0.01)
@@ -58,14 +60,6 @@ func set_values(project, aqi, cost, output):
 		$Budget.set_value(Color("red"))
 	$Output.set_child_text(output)
 	$Output.set_value(Color(0,0,0))	
-	
-func _ready():
-	var version = rng.randf_range(0, 10)
-	if (version <= 5):
-		rand(true)
-	else:
-		rand(false)
-
 
 
 

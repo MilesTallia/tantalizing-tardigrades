@@ -7,6 +7,7 @@
 size = Vector2(224.596, 325.194)
 
 [node name="Page" type="CharacterBody2D"]
+input_pickable = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_xfyem")
