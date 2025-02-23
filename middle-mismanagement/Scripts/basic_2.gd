@@ -95,7 +95,7 @@ var ominous_projects = [
 	"Strategic Price Fixing\nInitiative",
 	"Environmental Impact\nReport Suppression",
 	"Delayed Infrastructure\nMaintenance",
-	"Political Campaign\nFunding (lobbying)",
+	"Political Campaign\nFunding (Lobbying)",
 	"Contract Bid Rigging"
 ]
 
