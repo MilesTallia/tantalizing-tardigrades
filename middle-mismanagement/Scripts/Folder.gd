@@ -16,6 +16,7 @@ var difficulty = 1
 var good = true
 var company = "<<Company>>"
 var stamped = false;
+var passed = false;
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -67,6 +68,13 @@ func spawn_pages():
 		pageInst.get_child(3).rand(false)
 		
 	get_parent().add_child(pageInst)
+	
+func get_stamped(stamp: bool):
+	if (stamped != true):
+		stamped = true
+		passed = stamp
+		get_node("GameManager").folder_stamped()
+
 
 func chosenVal():
 	chosen = true
