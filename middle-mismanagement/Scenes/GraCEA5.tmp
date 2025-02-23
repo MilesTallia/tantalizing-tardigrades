@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp8ex58v2rwg0"]
+
+[ext_resource type="Texture2D" uid="uid://dd2w4kog7stku" path="res://Assets/Up.png" id="1_7xu4k"]
+[ext_resource type="Script" path="res://Scenes/graph.gd" id="1_kp3un"]
+
+[node name="Graph" type="Node2D"]
+script = ExtResource("1_kp3un")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7xu4k")
+
+[node name="Xmin" type="Label" parent="."]
+offset_left = -107.0
+offset_top = 84.0
+offset_right = -80.0
+offset_bottom = 107.0
+text = "0"
+
+[node name="Xmax" type="Label" parent="."]
+offset_left = 89.0
+offset_top = 84.0
+offset_right = 116.0
+offset_bottom = 107.0
+text = "0"
+
+[node name="Ymin" type="Label" parent="."]
+offset_left = -151.0
+offset_top = 50.0
+offset_right = -124.0
+offset_bottom = 73.0
+text = "0"
+
+[node name="Ymax" type="Label" parent="."]
+offset_left = -151.0
+offset_top = -70.0
+offset_right = -124.0
+offset_bottom = -47.0
+text = "0"
+
+[node name="Yunit" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -166.0
+offset_top = -38.0
+offset_right = -126.0
+offset_bottom = 44.0
