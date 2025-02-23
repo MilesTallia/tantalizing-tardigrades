@@ -6,9 +6,10 @@ var money = 10000
 var current_atm = 30
 var change_atm = 0
 var current_energy = 500
-var num_folders : int = 3  
-var array_folders = null
+var num_folders : int = 3
+var array_folders = []
 var diff: int = 0
+var num_stamped: int  = 0
 
 func get_day_num() -> int:
 	return day_num
@@ -58,7 +59,8 @@ func _ready() -> void:
 	
 	
 func start_day() -> void:
-	array_folders = []
+	array_folders.resize(num_folders)
+	num_stamped = 0
 	set_day_num(day_num + 1)
 	if day_num < 4:
 		diff = 1
@@ -69,27 +71,31 @@ func start_day() -> void:
 	var debrief_page = get_node("..//DebriefPage")
 	debrief_page.set_text()
 	var i : int = 0
+	var FOLDER = load("res://Scenes/Folder.tscn")
+
 	while i < num_folders:
-		var FOLDER = load("res://Scenes/Folder.tscn")
 		var folder = FOLDER.instantiate()
-		var diff : int = 0
+		await get_tree().create_timer(0).timeout
 		folder.difficulty = diff
 		var dir = true
 		if randi() % 2:
 			dir = false 
 		folder.good = dir
 		if dir and diff == 1:
-			folder.company = eco_freindly_companies.get_random()
+			folder.company = eco_freindly_companies.pick_random()
 		elif dir and diff == 2:
-			folder.company = normal_renewable_companies.get_random()
+			folder.company = normal_renewable_companies.pick_random()
 		elif !dir and diff == 1:
-			folder.company = ominous_companies.get_random()
+			folder.company = ominous_companies.pick_random()
 		elif !dir and diff == 2:
-			folder.company = shady_companies.get_random()
+			folder.company = shady_companies.pick_random()
 		elif diff == 3:
-			folder.company = vague_companies.get_random()
+			folder.company = vague_companies.pick_random()
 		get_parent().add_child(folder)
+		array_folders[i] = folder
+		print(folder.company)
 		i += 1	
+
 
 
 	#new_folder.position = position  
@@ -97,8 +103,11 @@ func start_day() -> void:
 	
 	
 func end_day() -> void:
-	#for folder in array_folders:
-		#money.set(money + folder.get)
+	for folder in array_folders:
+		get_parent().remove_child(folder)
+	#	if folder.stamped:
+	#		money.set(money + folder.)
+		
 	if (money < 0):
 		end_game()
 	elif (current_atm > 200):
@@ -113,16 +122,15 @@ func end_game():
 	get_tree().change_scene_to_file("res://Scenes/Death.tscn")
 	#change scene to end game
 	return; 
+	
+func folder_stamped() -> void:
+	num_stamped += 1
+	if num_stamped == num_folders:
+		await get_tree().create_timer(1).timeout
+		end_day()
+		
+	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if array_folders != null:
-		var tof : bool = true
-		for folder in array_folders:
-			if tof:
-				tof = folder.is_stamped()
-		if tof:
-			end_day()
 		
 		
 var ominous_companies = [
