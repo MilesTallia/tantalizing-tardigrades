@@ -52,7 +52,7 @@ theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("7_6s34f")
 theme_override_font_sizes/font_size = 64
 text = "wqeqweq"
-autowrap_mode = 3
+autowrap_mode = 2
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("4_icqku")
