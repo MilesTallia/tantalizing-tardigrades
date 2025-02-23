@@ -8,6 +8,7 @@
 size = Vector2(188, 171)
 
 [node name="OkStamp2" type="CharacterBody2D"]
+collision_layer = 2
 input_pickable = true
 script = ExtResource("1_v8scg")
 

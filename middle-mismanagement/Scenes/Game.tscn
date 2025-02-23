@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://Scenes/FailStamp.tscn" id="3_yquht"]
+[ext_resource type="PackedScene" uid="uid://olsho8scxxxe" path="res://Scenes/FailStamp.tscn" id="3_yquht"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
 [ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="6_s4b2g"]
