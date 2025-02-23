@@ -109,15 +109,17 @@ func end_day() -> void:
 	for folder in array_folders:
 		get_parent().remove_child(folder)
 		if folder.passed:
-			set_money(money + folder.cost)
-			set_change_atm(change_atm + folder.aqi)
-			set_current_energy(current_energy + folder.output)
-		
+			var folder_stats = folder.get_stats()
+			set_money(money + folder_stats[1])
+			print(money + folder_stats[1])
+			set_change_atm(change_atm + folder_stats[0])
+			set_current_energy(current_energy + folder_stats[2])
+	
 	if (money < 0):
 		end_game()
 	elif (current_atm > 200):
 		end_game()
-	elif (current_energy < day_num * 50):
+	elif (current_energy < day_num * 100):
 		end_game()
 	else:
 		start_day()
