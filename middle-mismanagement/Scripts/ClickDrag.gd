@@ -9,8 +9,11 @@ var mouse_in = false
 var chosen = false
 
 func _input(event):
-	if event is InputEventMouseButton:
-		if chosen and event.is_pressed() && mouse_in:
+	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_RIGHT:
+		if chosen and event.is_pressed() && mouse_in and event.button_index == MOUSE_BUTTON_RIGHT:
+			MarkFolder()
+	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT:
+		if chosen and Input.is_action_pressed("mouse_click") && mouse_in:
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			dir = (get_viewport().get_mouse_position() - position).normalized()
 			dragging = true
@@ -37,3 +40,24 @@ func mouse_entered():
 
 func mouse_exited():
 	mouse_in = false
+	
+func MarkFolder():
+	position = get_global_mouse_position()
+
+	var count = len($Area2D.get_overlapping_bodies())
+	if (count == 0):
+		pass
+	elif (count == 1):
+		print("stamped")
+		#$Area2D.get_overlapping_bodies()[0].chosenVal()
+
+	else:
+		var max_index = -1
+		var top_obj = null
+		for b in $Area2D.get_overlapping_bodies():
+			if (b.z_index > max_index):
+				max_index = b.z_index
+				top_obj = b
+		
+		#top_obj.chosenVal()
+		print("stamped")
