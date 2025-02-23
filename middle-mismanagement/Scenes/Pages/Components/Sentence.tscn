@@ -3,7 +3,10 @@
 [ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="1_5sdv4"]
 
 [node name="Sentence" type="Label"]
+offset_right = 550.0
+offset_bottom = 133.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_5sdv4")
 theme_override_font_sizes/font_size = 64
 text = "This is a sample sentence"
+autowrap_mode = 3

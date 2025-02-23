@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcpx0drpddhsn"]
+[gd_scene load_steps=6 format=3 uid="uid://chrbb5lhfurpa"]
 
-[ext_resource type="Script" path="res://Scripts/basic_1.gd" id="1_3lwny"]
+[ext_resource type="Script" path="res://Scripts/basic_2.gd" id="1_0mfwv"]
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="2_wvomj"]
 [ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="3_6ftyf"]
+[ext_resource type="PackedScene" uid="uid://jca6cdmfvaiu" path="res://Scenes/Pages/Components/Sentence.tscn" id="4_ualbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)
 
 [node name="Page" type="CharacterBody2D"]
-script = ExtResource("1_3lwny")
+script = ExtResource("1_0mfwv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wvomj")
@@ -53,39 +54,26 @@ offset_right = 288.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "SweatShop"
 
-[node name="AQI" parent="." instance=ExtResource("3_6ftyf")]
+[node name="1" parent="." instance=ExtResource("4_ualbt")]
 offset_left = -90.0
-offset_top = -90.0
-offset_right = 422.0
-offset_bottom = -25.0
-text = "AQI Impact: "
+offset_top = -72.0
+offset_right = 694.0
+offset_bottom = 92.0
+scale = Vector2(0.25, 0.25)
 
-[node name="Label" parent="AQI" index="0"]
-offset_left = 360.0
-offset_right = 488.0
-theme_override_colors/font_color = Color(0.661604, 0, 0.0346332, 1)
-text = "5"
-
-[node name="Budget" parent="." instance=ExtResource("3_6ftyf")]
+[node name="2" parent="." instance=ExtResource("4_ualbt")]
 offset_left = -90.0
-offset_top = -60.0
-offset_right = 422.0
-offset_bottom = 5.0
+offset_top = 67.0
+offset_right = 694.0
+offset_bottom = 231.0
+scale = Vector2(0.25, 0.25)
 
-[node name="Output" parent="." instance=ExtResource("3_6ftyf")]
+[node name="3" parent="." instance=ExtResource("4_ualbt")]
 offset_left = -90.0
-offset_top = -30.0
-offset_right = 422.0
-offset_bottom = 35.0
-text = "Ouput: "
-
-[node name="Label" parent="Output" index="0"]
-offset_left = 216.0
-offset_right = 408.0
-text = "500kwh"
+offset_top = -6.0
+offset_right = 694.0
+offset_bottom = 158.0
+scale = Vector2(0.25, 0.25)
 
 [editable path="Project"]
 [editable path="Title"]
-[editable path="AQI"]
-[editable path="Budget"]
-[editable path="Output"]
