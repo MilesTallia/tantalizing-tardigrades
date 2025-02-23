@@ -99,7 +99,7 @@ texture = ExtResource("3_fya1g")
 
 [node name="Folder" parent="." instance=ExtResource("4_6xkuw")]
 z_index = -1000
-position = Vector2(-400, -155)
+position = Vector2(-108, -158)
 script = null
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Folder"]

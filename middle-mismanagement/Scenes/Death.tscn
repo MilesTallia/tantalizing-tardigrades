@@ -1,15 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://5mbi6tkkjfsl"]
+[gd_scene load_steps=3 format=3 uid="uid://5mbi6tkkjfsl"]
 
 [ext_resource type="Script" path="res://Scripts/DeathDisplay.gd" id="1_8u7nt"]
+[ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="2_ahqcp"]
 
 [node name="Death" type="Node2D"]
-
-[node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("1_8u7nt")
 
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = 1.0
-offset_right = 41.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 32
-text = "Hi"
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+light_mask = 512
+visibility_layer = 512
+z_index = -4096
+position = Vector2(-3, 7)
+scale = Vector2(0.291912, 0.231445)
+texture = ExtResource("2_ahqcp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -119.0
+offset_top = -111.0
+offset_right = 118.0
+offset_bottom = -38.0
+theme_override_font_sizes/font_size = 40
+text = "Game Over"
+
+[node name="Title" type="Button" parent="."]
+offset_left = -129.0
+offset_top = 40.0
+offset_right = 104.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 40
+text = "Title Screen"
+
+[connection signal="pressed" from="Title" to="." method="_on_title_pressed"]
