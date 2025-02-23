@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://Scenes/FailStamp.tscn" id="3_yquht"]
+[ext_resource type="PackedScene" uid="uid://olsho8scxxxe" path="res://Scenes/FailStamp.tscn" id="3_yquht"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
 [ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="6_s4b2g"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="7_aihta"]
 [ext_resource type="PackedScene" uid="uid://cvfh2gyn7b12c" path="res://Scenes/OkStamp.tscn" id="9_aehwd"]
-[ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="10_3bgtx"]
+[ext_resource type="PackedScene" path="res://Scenes/Clock.tscn" id="10_3bgtx"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
