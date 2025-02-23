@@ -92,13 +92,13 @@ func start_day() -> void:
 		folder.good = dir
 		if dir and diff == 1:
 			folder.company = eco_freindly_companies.pick_random()
-		elif dir and diff == 2:
+		elif dir and diff == 3:
 			folder.company = normal_renewable_companies.pick_random()
 		elif !dir and diff == 1:
 			folder.company = ominous_companies.pick_random()
-		elif !dir and diff == 2:
+		elif !dir and diff == 3:
 			folder.company = shady_companies.pick_random()
-		elif diff == 3:
+		elif diff == 2 or diff > 3:
 			folder.company = vague_companies.pick_random()
 		get_parent().add_child(folder)
 		folder.position += Vector2(0, 90* i + 100)
