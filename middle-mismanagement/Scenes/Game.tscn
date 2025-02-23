@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://db61qb2c13rvi"]
+[gd_scene load_steps=15 format=3 uid="uid://db61qb2c13rvi"]
 
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="7_aihta"]
 [ext_resource type="PackedScene" uid="uid://cvfh2gyn7b12c" path="res://Scenes/OkStamp.tscn" id="9_aehwd"]
 [ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="10_3bgtx"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="12_iao3h"]
+[ext_resource type="Script" path="res://Scripts/pause_menu_buttons.gd" id="13_l25se"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -62,4 +64,12 @@ position = Vector2(1415, 944)
 [node name="Clock" parent="." instance=ExtResource("10_3bgtx")]
 position = Vector2(348, 11)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("12_iao3h")]
+scale = Vector2(1.275, 1.275)
+script = ExtResource("13_l25se")
+
+[editable path="OkStamp2"]
 [editable path="Clock"]
