@@ -1,9 +1,5 @@
 extends CharacterBody2D
 
-
-var old_location = position
-
-
 var draggingDistance
 var dir
 var dragging
@@ -33,8 +29,8 @@ func _input(event):
 				if !open and hasPapers:
 					spawn_pages(good)
 				
-					hasPapers = false
-					$"Closed Folder/Paper".visible = false
+				hasPapers = false
+				$"Closed Folder/Paper".visible = false
 				if open:
 					$"Open Folder".visible = false
 					$"Closed Folder".visible = true
@@ -53,13 +49,10 @@ func _input(event):
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 
 func _physics_process(delta):
-	return
-	#if dragging:
-		#scale = Vector2(1,1)
-		#set_velocity((newPosition - position) * Vector2(30, 30))
-		#move_and_slide()
-
-
+	if dragging:
+		scale = Vector2(1,1)
+		set_velocity((newPosition - position) * Vector2(30, 30))
+		move_and_slide()
 	
 func assign_company(good : bool):
 	return
@@ -75,3 +68,6 @@ func mouse_entered():
 
 func mouse_exited():
 	mouse_in = false
+
+func _ready():
+	assign_company(good)

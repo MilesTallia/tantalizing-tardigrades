@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1ctp1kuh7pms"]
+[gd_scene load_steps=6 format=3 uid="uid://b1ctp1kuh7pms"]
 
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="1_4oy50"]
 [ext_resource type="Script" path="res://Scripts/basic_1.gd" id="1_fv3iy"]
+[ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_sw5a5"]
 [ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="2_2er7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)
 
 [node name="Page" type="CharacterBody2D"]
-script = ExtResource("1_fv3iy")
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_sw5a5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4oy50")
@@ -25,67 +28,82 @@ offset_bottom = 152.0
 color = Color(0.764706, 0.780392, 0.792157, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Project" parent="." instance=ExtResource("2_2er7x")]
+[node name="Labels" type="Node2D" parent="."]
+script = ExtResource("1_fv3iy")
+
+[node name="Project" parent="Labels" instance=ExtResource("2_2er7x")]
+visible = false
 offset_left = 4.0
 offset_top = -152.0
 offset_right = 388.0
 offset_bottom = -87.0
 text = "Project Name"
 
-[node name="Label" parent="Project" index="0"]
+[node name="Label" parent="Labels/Project" index="0"]
 visible = false
 
-[node name="Field2" parent="Project/Label" index="0" instance=ExtResource("2_2er7x")]
+[node name="Field2" parent="Labels/Project/Label" index="0" instance=ExtResource("2_2er7x")]
 layout_mode = 0
 text = "Title: SweatShop"
 script = null
 
-[node name="Title" parent="." instance=ExtResource("2_2er7x")]
+[node name="Title" parent="Labels" instance=ExtResource("2_2er7x")]
 offset_left = -90.0
 offset_top = -120.0
 offset_right = 422.0
 offset_bottom = -55.0
 text = ""
 
-[node name="Label" parent="Title" index="0"]
+[node name="Label" parent="Labels/Title" index="0"]
 offset_left = 0.0
 offset_right = 288.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "SweatShop"
 
-[node name="AQI" parent="." instance=ExtResource("2_2er7x")]
+[node name="AQI" parent="Labels" instance=ExtResource("2_2er7x")]
 offset_left = -90.0
-offset_top = -90.0
+offset_top = -55.0
 offset_right = 422.0
-offset_bottom = -25.0
+offset_bottom = 10.0
 text = "AQI Impact: "
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" parent="AQI" index="0"]
+[node name="Label" parent="Labels/AQI" index="0"]
 offset_left = 360.0
 offset_right = 488.0
 theme_override_colors/font_color = Color(0.661604, 0, 0.0346332, 1)
 text = "5"
+metadata/_edit_use_anchors_ = true
 
-[node name="Budget" parent="." instance=ExtResource("2_2er7x")]
+[node name="Budget" parent="Labels" instance=ExtResource("2_2er7x")]
 offset_left = -90.0
-offset_top = -60.0
+offset_top = -25.0
 offset_right = 422.0
-offset_bottom = 5.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Output" parent="." instance=ExtResource("2_2er7x")]
+[node name="Label" parent="Labels/Budget" index="0"]
+metadata/_edit_use_anchors_ = true
+
+[node name="Output" parent="Labels" instance=ExtResource("2_2er7x")]
 offset_left = -90.0
-offset_top = -30.0
+offset_top = 5.0
 offset_right = 422.0
-offset_bottom = 35.0
+offset_bottom = 70.0
 text = "Ouput: "
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" parent="Output" index="0"]
+[node name="Label" parent="Labels/Output" index="0"]
 offset_left = 216.0
 offset_right = 408.0
 text = "500kwh"
+metadata/_edit_use_anchors_ = true
 
-[editable path="Project"]
-[editable path="Title"]
-[editable path="AQI"]
-[editable path="Budget"]
-[editable path="Output"]
+[connection signal="mouse_entered" from="." to="." method="mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exited"]
+
+[editable path="Labels/Project"]
+[editable path="Labels/Title"]
+[editable path="Labels/AQI"]
+[editable path="Labels/Budget"]
+[editable path="Labels/Output"]

@@ -3,26 +3,24 @@ extends "res://Scripts/Folder.gd"
 func assign_company(good : bool):
 	if (good == true):
 		company = eco_freindly_companies.pick_random()
+		$Label.text = company
 	else:
 		company = ominous_companies.pick_random()
+		$Label.text = company
 	
 func spawn_pages(good : bool):
 	
 	var page = load("res://Scenes/Pages/Presets/Basic1.tscn")
 	var pageInst = page.instantiate()
-	add_child(pageInst)
+	pageInst.position = position
 		
 	if (good):
-		pageInst.rand(true)
+		print(pageInst.get_child(3))
+		pageInst.get_child(3).rand(true)
 	else:
-		pageInst.rand(false)
-
-func set_values(aqi, cost, output):
-	aqi = snapped(aqi, 0.01)
-	$AQI.set_child_text(str(aqi))
-	
-
-
+		pageInst.get_child(3).rand(false)
+		
+	get_parent().add_child(pageInst)
 
 
 

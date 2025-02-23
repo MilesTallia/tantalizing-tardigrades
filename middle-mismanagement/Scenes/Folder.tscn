@@ -53,10 +53,10 @@ color = Color(0.443137, 0.52549, 0.623529, 1)
 polygon = PackedVector2Array(0, 280, -136, 231, -136, -62, 0, 0)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 9.0
-offset_top = 76.0
-offset_right = 185.0
-offset_bottom = 229.0
+offset_left = 13.0
+offset_top = 75.0
+offset_right = 189.0
+offset_bottom = 228.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_nn5uf")
 theme_override_font_sizes/font_size = 25
