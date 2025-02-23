@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://db61qb2c13rvi"]
+[gd_scene load_steps=6 format=3 uid="uid://db61qb2c13rvi"]
 
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" path="res://Scenes/NamePlate.tscn" id="4_nl6na"]
+=======
 [ext_resource type="PackedScene" uid="uid://bspfi0c7qs6ve" path="res://Scenes/NamePlate.tscn" id="4_nl6na"]
 [ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="6_hsayt"]
+>>>>>>> 4d7af8fd34bb4b73506f2c4ff2a2147d30d20ae6
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -21,12 +25,24 @@ shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3")]
 position = Vector2(957, 209)
+<<<<<<< HEAD
+input_pickable = true
+
+[node name="Paper3" parent="." instance=ExtResource("3")]
+position = Vector2(211, 104)
+input_pickable = true
+
+[node name="Paper" parent="." instance=ExtResource("3")]
+position = Vector2(655, 207)
+input_pickable = true
+=======
 
 [node name="Paper3" parent="." instance=ExtResource("3")]
 position = Vector2(856, 386)
 
 [node name="Paper" parent="." instance=ExtResource("3")]
 position = Vector2(655, 207)
+>>>>>>> 4d7af8fd34bb4b73506f2c4ff2a2147d30d20ae6
 
 [node name="NamePlate" parent="." instance=ExtResource("4_nl6na")]
 
