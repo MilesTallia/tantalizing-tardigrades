@@ -60,10 +60,10 @@ func _ready() -> void:
 	
 func start_day() -> void:
 	var clock = get_node("..//Clock").get_child(3)
-	if 300 - day_num * 15 < 30:
+	if 300 - day_num * 10 < 30:
 		clock.start(30)
 	else:
-		clock.start(300 - day_num * 15)
+		clock.start(360 - day_num * 10)
 	for child in get_tree().get_nodes_in_group("page"):
 		child.queue_free()
 	array_folders.resize(num_folders)
@@ -135,10 +135,17 @@ func end_day() -> void:
 		start_day()
 
 func end_game():
+	#var game_manager_instance : get_parent() = null
 	print(get_path())
 	get_tree().change_scene_to_file("res://Scenes/Death.tscn")
-	#change scene to end game
 	return; 
+	
+#func get_game_manager() -> GameManager:
+	#if game_manager_instance == null:
+		#game_manager_instance = GameManager.new()  # Create an instance of GameManager
+		#get_tree().root.add_child(game_manager_instance)  # Add it to the scene tree
+		#print("GameManager instance created.")
+	#return game_manager_instance
 	
 func folder_stamped() -> void:
 	num_stamped += 1
