@@ -8,6 +8,7 @@ size = Vector2(224.596, 325.194)
 
 [node name="Paper" type="CharacterBody2D"]
 collision_layer = 2
+input_pickable = true
 script = ExtResource("1_c1cc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
