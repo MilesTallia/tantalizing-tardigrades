@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://1bsj6lvaaqxl"]
+
+[ext_resource type="PackedScene" uid="uid://5mbi6tkkjfsl" path="res://Scenes/Death.tscn" id="1_j31st"]
+
+[node name="DeathByAir" type="Node2D"]
+
+[node name="Death" parent="." instance=ExtResource("1_j31st")]
+
+[node name="Label" parent="Death" index="2"]
+offset_left = -235.045
+offset_top = -85.8006
+offset_right = 235.955
+offset_bottom = 85.1994
+text = "Game Over
+
+Air quality was over 200."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" parent="Death" index="3"]
+offset_left = -117.825
+offset_top = 161.934
+offset_right = 115.175
+offset_bottom = 244.934
+
+[editable path="Death"]

@@ -5,7 +5,7 @@ var day_num = 0
 var money = 10000
 var current_atm = 30
 var change_atm = 0
-var current_energy = 500
+var current_energy = 0
 var num_folders : int = 3
 var array_folders = []
 var diff: int = 0
@@ -124,7 +124,7 @@ func start_day() -> void:
 func end_day() -> void:
 	var screen = get_node("..//ColorRect")
 	screen.show()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	screen.hide()
 	for folder in array_folders:
 		get_parent().remove_child(folder)
@@ -137,11 +137,11 @@ func end_day() -> void:
 			set_current_energy(current_energy + folder_stats[2])
 	
 	if (money < 0):
-		end_game()
+		get_tree().change_scene_to_file("res://Scenes/DeathByMoney.tscn")
 	elif (current_atm > 200):
-		end_game()
+		get_tree().change_scene_to_file("res://Scenes/DeathByAir.tscn")
 	elif (current_energy < day_num * 100):
-		end_game()
+		get_tree().change_scene_to_file("res://Scenes/DeathbyEnergy.tscn")
 	else:
 		current_atm += change_atm
 		start_day()

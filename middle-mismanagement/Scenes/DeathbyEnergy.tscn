@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dudgd5a5a0g16"]
+
+[ext_resource type="PackedScene" uid="uid://5mbi6tkkjfsl" path="res://Scenes/Death.tscn" id="1_yvnpn"]
+
+[node name="DeathbyEnergy" type="Node2D"]
+
+[node name="Death" parent="." instance=ExtResource("1_yvnpn")]
+
+[node name="Label" parent="Death" index="2"]
+offset_left = -266.465
+offset_top = -84.5921
+offset_right = 266.535
+offset_bottom = 86.4079
+text = "Game Over
+
+Did not meet target energy."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" parent="Death" index="3"]
+offset_left = -115.408
+offset_top = 152.266
+offset_right = 117.592
+offset_bottom = 235.266
+
+[editable path="Death"]

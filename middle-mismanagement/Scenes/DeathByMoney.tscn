@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7nv6e7x1nmkd"]
+
+[ext_resource type="PackedScene" uid="uid://5mbi6tkkjfsl" path="res://Scenes/Death.tscn" id="1_6car2"]
+
+[node name="DeathByMoney" type="Node2D"]
+
+[node name="Death" parent="." instance=ExtResource("1_6car2")]
+
+[node name="Label" parent="Death" index="2"]
+offset_left = -177.039
+offset_top = -84.5921
+offset_right = 176.961
+offset_bottom = 86.4079
+text = "Game Over
+
+Ran out of money."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" parent="Death" index="3"]
+offset_left = -112.991
+offset_top = 167.976
+offset_right = 120.009
+offset_bottom = 250.976
+
+[editable path="Death"]
