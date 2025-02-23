@@ -59,6 +59,8 @@ func _ready() -> void:
 	
 	
 func start_day() -> void:
+	var clock = get_node("..//Clock").get_child(3)
+	clock.start(10)
 	array_folders.resize(num_folders)
 	num_stamped = 0
 	set_day_num(day_num + 1)
@@ -96,17 +98,16 @@ func start_day() -> void:
 		print(folder.company)
 		i += 1	
 
-
-
 	#new_folder.position = position  
 
-	
 	
 func end_day() -> void:
 	for folder in array_folders:
 		get_parent().remove_child(folder)
-	#	if folder.stamped:
-	#		money.set(money + folder.)
+		if folder.passed:
+			set_money(money + folder.cost)
+			set_change_atm(change_atm + folder.api)
+			set_current_energy(current_energy + folder.output)
 		
 	if (money < 0):
 		end_game()
