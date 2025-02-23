@@ -19,11 +19,9 @@ func _is_pos_in(checkpos:Vector2):
 func _input(event):
 	if event is InputEventMouseButton:
 		if zoomed and event.is_pressed() and not _is_pos_in(event.position):
-			print("outside click zoomed")
 			scale = Vector2(1.7, 0.8)
 			zoomed = false
 		elif chosen and event.is_pressed() and mouse_in:
-			print("normal drag")
 			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			dir = (get_viewport().get_mouse_position() - position).normalized()
 			dragging = true
@@ -37,7 +35,6 @@ func _input(event):
 					dragging = false
 					zoomed = true
 		else:
-			print("else")
 			dragging = false
 			chosen = false
 			
