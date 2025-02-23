@@ -48,5 +48,13 @@ visible = false
 position = Vector2(104.851, 37.2015)
 shape = SubResource("RectangleShape2D_piwcn")
 
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+color = Color(0.252614, 0.145657, 0, 1)
+polygon = PackedVector2Array(196, 0, 212, -5, 225, 65, 208, 74)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+color = Color(0.310764, 0.183588, 0, 1)
+polygon = PackedVector2Array(212, -5, 25, -5, 9, 0, 196, 0)
+
 [connection signal="mouse_entered" from="." to="." method="mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="mouse_exited"]
