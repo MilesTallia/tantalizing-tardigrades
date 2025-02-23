@@ -16,6 +16,10 @@ var chosen = false
 var open = false
 var hasPapers = true
 
+var good = true
+var company = "<<Company>>"
+var stamped = false;
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if chosen and event.is_pressed() && mouse_in:
@@ -24,8 +28,13 @@ func _input(event):
 			dragging = true
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 			if event.double_click:
-				hasPapers = false
-				$"Closed Folder/Paper".visible = false
+				
+				
+				if !open and hasPapers:
+					spawn_pages(good)
+				
+					hasPapers = false
+					$"Closed Folder/Paper".visible = false
 				if open:
 					$"Open Folder".visible = false
 					$"Closed Folder".visible = true
@@ -44,11 +53,19 @@ func _input(event):
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 
 func _physics_process(delta):
-	if dragging:
-		scale = Vector2(1,1)
-		set_velocity((newPosition - position) * Vector2(30, 30))
-		move_and_slide()
+	return
+	#if dragging:
+		#scale = Vector2(1,1)
+		#set_velocity((newPosition - position) * Vector2(30, 30))
+		#move_and_slide()
 
+
+	
+func assign_company(good : bool):
+	return
+	
+func spawn_pages(good : bool):
+	return
 
 func chosenVal():
 	chosen = true

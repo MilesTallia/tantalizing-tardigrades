@@ -20,15 +20,12 @@ shape = SubResource("1")
 
 [node name="Paper2" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(725.443, 180.709)
-input_pickable = true
 
 [node name="Paper3" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(259.77, 121.631)
-input_pickable = true
 
 [node name="Paper" parent="." instance=ExtResource("3_emqkc")]
 position = Vector2(480.443, 131.188)
-input_pickable = true
 
 [node name="Page" parent="." instance=ExtResource("4_alb5g")]
 position = Vector2(222, 377)
