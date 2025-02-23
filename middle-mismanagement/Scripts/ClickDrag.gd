@@ -10,8 +10,8 @@ var mouse_in = false
 var chosen = false
 
 func _input(event):
-	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_RIGHT:
-		if chosen and event.is_pressed() && mouse_in and event.button_index == MOUSE_BUTTON_RIGHT:
+	if (event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_RIGHT) || (event is InputEventKey && event.keycode == KEY_SPACE):
+		if chosen and event.is_pressed() && mouse_in:
 			MarkFolder()
 	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT:
 		if chosen and Input.is_action_pressed("mouse_click") && mouse_in:
@@ -49,7 +49,7 @@ func MarkFolder():
 	if (count == 0):
 		pass
 	elif (count == 1):
-		$Area2D.get_overlapping_bodies()[0].getStamped(stamp)
+		$Area2D.get_overlapping_bodies()[0].get_stamped(stamp)
 
 	else:
 		var max_index = -1
@@ -59,5 +59,5 @@ func MarkFolder():
 				max_index = b.z_index
 				top_obj = b
 		
-		top_obj.getStamped(stamp)
+		top_obj.get_stamped(stamp)
 		#print("stamped")

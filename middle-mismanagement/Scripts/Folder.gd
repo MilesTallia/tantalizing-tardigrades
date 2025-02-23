@@ -80,7 +80,8 @@ func get_stamped(stamp: bool):
 	if (stamped != true):
 		stamped = true
 		passed = stamp
-		get_node("GameManager").folder_stamped()
+		if get_node("GameManager"):
+			get_node("GameManager").folder_stamped()
 		
 func get_stats():
 	return [aqi, cost, output]

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t34sv"]
 size = Vector2(188, 171)
 
-[node name="OkStamp" type="CharacterBody2D"]
+[node name="OkStamp2" type="CharacterBody2D"]
 input_pickable = true
 script = ExtResource("1_v8scg")
 
