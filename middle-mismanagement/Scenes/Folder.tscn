@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://q31f515aqwhi"]
+
+[ext_resource type="Script" path="res://Scripts/Folder.gd" id="1_yg38n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbfw1"]
+size = Vector2(218, 279)
+
+[node name="Folder" type="CharacterBody2D"]
+collision_layer = 2
+input_pickable = true
+script = ExtResource("1_yg38n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(109, 139.5)
+shape = SubResource("RectangleShape2D_bbfw1")
+
+[node name="Closed Folder" type="Node2D" parent="."]
+
+[node name="Paper" type="ColorRect" parent="Closed Folder"]
+offset_left = 43.0
+offset_top = -8.0
+offset_right = 229.0
+offset_bottom = 239.0
+rotation = 0.148353
+mouse_filter = 1
+
+[node name="Folder tab" type="Polygon2D" parent="Closed Folder"]
+color = Color(0.454902, 0.537255, 0.635294, 1)
+polygon = PackedVector2Array(202, 280, 217, 268, 217, 229, 202, 218)
+
+[node name="Folder body" type="ColorRect" parent="Closed Folder"]
+offset_right = 202.0
+offset_bottom = 280.0
+mouse_filter = 1
+color = Color(0.45549, 0.538073, 0.635538, 1)
+
+[node name="Open Folder" type="Node2D" parent="."]
+visible = false
+
+[node name="Folder tab" type="Polygon2D" parent="Open Folder"]
+color = Color(0.513726, 0.596078, 0.690196, 1)
+polygon = PackedVector2Array(202, 280, 217, 268, 217, 229, 202, 218)
+
+[node name="Folder body" type="ColorRect" parent="Open Folder"]
+offset_right = 202.0
+offset_bottom = 280.0
+mouse_filter = 1
+color = Color(0.513726, 0.596078, 0.690196, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Open Folder"]
+color = Color(0.443137, 0.52549, 0.623529, 1)
+polygon = PackedVector2Array(0, 280, -136, 231, -136, -62, 0, 0)
+
+[connection signal="mouse_entered" from="." to="." method="mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="mouse_exited"]
