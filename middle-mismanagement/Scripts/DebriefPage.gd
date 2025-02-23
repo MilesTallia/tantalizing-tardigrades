@@ -31,9 +31,20 @@ func _physics_process(delta):
 func set_text():
 	var gameManager = get_node("..//GameManager")
 	var debrief_test:String = ""
+	
+	var code1 = 0
+	var code2 = 0
+	var code3 = 0
+	if gameManager.get_current_atm() > 120:
+		code1 = 1
+	if gameManager.get_money() > 50000:
+		code2 = 1
+	if gameManager.get_current_energy() - gameManager.get_day_num() * 100 > 250:
+		code3 = 1
+	debrief_test += sentences[str(code1) + str(code2) + str(code3)] + "\n       \n"
 	debrief_test += "Day number: " + str(gameManager.get_day_num()) + "\n"
-	debrief_test += "Money: $" + str(gameManager.get_money()) + "\n"
 	debrief_test += "Air quality " + str(gameManager.get_current_atm()) + " AQI\n"
+	debrief_test += "Money: $" + str(gameManager.get_money()) + "\n"
 	debrief_test += "Current energy " + str(gameManager.get_current_energy()) + " MW\n"
 	debrief_test += "Required energy " + str(gameManager.get_day_num() * 100) + " MW\n"
 	$Label.text = debrief_test

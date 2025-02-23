@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://db61qb2c13rvi"]
+[gd_scene load_steps=13 format=3 uid="uid://db61qb2c13rvi"]
 
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
 [ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
 [ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="6_s4b2g"]
+[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="7_6s34f"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="7_aihta"]
 [ext_resource type="PackedScene" uid="uid://cvfh2gyn7b12c" path="res://Scenes/OkStamp.tscn" id="9_aehwd"]
 [ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="10_3bgtx"]
@@ -34,15 +35,21 @@ script = ExtResource("1")
 shape = SubResource("1")
 
 [node name="DebriefPage" parent="." instance=ExtResource("3")]
-position = Vector2(1721, 205)
+position = Vector2(945, 145)
+scale = Vector2(1.7, 0.8)
 script = ExtResource("5_7ns8a")
 
 [node name="Label" type="Label" parent="DebriefPage"]
-offset_left = -98.0
-offset_top = -148.0
-offset_right = 96.0
-offset_bottom = 23.0
+offset_left = -107.0
+offset_top = -150.0
+offset_right = 159.0
+offset_bottom = 30.0
+scale = Vector2(0.8, 1.7)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7_6s34f")
+theme_override_font_sizes/font_size = 14
+autowrap_mode = 3
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("4_icqku")
