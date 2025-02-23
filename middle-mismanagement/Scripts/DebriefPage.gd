@@ -46,3 +46,21 @@ func mouse_entered():
 
 func mouse_exited():
 	mouse_in = false
+
+
+
+
+
+
+
+
+var sentences = {
+	"000" = "The beautiful town of Kalamazoo smells amazing, the air quality so pure it melts your heart. Unfortunately... Kalamazoo is completely broke and making no energy.",
+	"100" = "Kalamazoo has truly fallen on hard times. Not only being completely destitute and lacking electricity, but also suffering from horrendous air pollution. How on earth did this even happen?",
+	"010" = "What a beautiful day to go outside! The air is great and Kalamazoo's pockets are heavy with coin. Unfortunately it's best if you stay outside as the lack of energy production has led to houses not hacing ac :( ",
+	"001" = "The magnificently beautiful and fantastically broke town of Kalamazoo seems to be producing a LOT of electricity! Good for them :) ",
+	"110" = "Corporate greed has struck again. This time taking Kalamazoo, a once beautiful town has been overun by factories and hardships, but at great success for the rich businessmen of the area. Oh yeah, and the air sucks.",
+	"101" = "The townspeaple of Kalamazoo have taken to staying inside, away from the polluted air outside and staying comfortable in their nicely powered homes, hoping they have enough money for tomorrow.",
+	"011" = "Kalamazoo is thriving! Such a beautiful place to live, birds singing on treetops, shiny coins strewn around the streets, and sweet sweet air conditioning in every household!",
+	"111" = "The people of Kalamazoo walk the town in masks, it's a pain to go outside but everybody is intent to go out shopping on the weekend with their disposable incomes.They spend time at their arcades theeaters and ultra-high-powered-go-kart-arenas."
+}
