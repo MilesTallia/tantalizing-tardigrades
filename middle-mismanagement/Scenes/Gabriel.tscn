@@ -11,7 +11,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks7s2"]
 radius = 2.52616
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 script = ExtResource("1_mrqer")
 
 [node name="Page" parent="." instance=ExtResource("4_alb5g")]
@@ -35,6 +35,9 @@ position = Vector2(655, 207)
 
 [node name="OkStamp" parent="." instance=ExtResource("4_jn7p2")]
 position = Vector2(458, 158)
+collision_layer = 2
+
+[node name="OkStamp2" parent="." instance=ExtResource("4_jn7p2")]
 collision_layer = 2
 
 [node name="Folder" parent="." instance=ExtResource("6_fhp41")]

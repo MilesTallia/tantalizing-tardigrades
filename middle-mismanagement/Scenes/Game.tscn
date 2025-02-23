@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3"]
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_icqku"]
 [ext_resource type="Script" path="res://Scripts/DebriefPage.gd" id="5_7ns8a"]
-[ext_resource type="PackedScene" uid="uid://bspfi0c7qs6ve" path="res://Scenes/NamePlate.tscn" id="6_s4b2g"]
+[ext_resource type="PackedScene" uid="uid://cucwululgubay" path="res://Scenes/NamePlate.tscn" id="6_s4b2g"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="7_aihta"]
 
 [sub_resource type="CircleShape2D" id="1"]

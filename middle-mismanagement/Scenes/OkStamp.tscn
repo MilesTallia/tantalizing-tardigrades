@@ -8,6 +8,7 @@
 size = Vector2(188, 171)
 
 [node name="OkStamp" type="CharacterBody2D"]
+collision_layer = 2
 input_pickable = true
 script = ExtResource("1_kguj5")
 stamp = true
