@@ -74,7 +74,7 @@ func set_text():
 	debrief_test += sentences[str(code1) + str(code2) + str(code3)] + "\n       \n"
 	debrief_test += "Day number: " + str(gameManager.get_day_num()) + "\n"
 	debrief_test += "Air quality " + str(gameManager.get_current_atm()) + " AQI" + " + " + str(gameManager.get_change_atm()) + "/d\n"
-	debrief_test += "Money: $" + str(gameManager.get_money()) + "\n"
+	debrief_test += "Money: $" + str(snapped(float(gameManager.get_money()) / 1000.0, 0.01)) + "K\n"
 	debrief_test += "Current energy " + str(gameManager.get_current_energy()) + " MW\n"
 	debrief_test += "Required energy " + str(gameManager.get_day_num() * 100) + " MW\n"
 	$Label.text = debrief_test
