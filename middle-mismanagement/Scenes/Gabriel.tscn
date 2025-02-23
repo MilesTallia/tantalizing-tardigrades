@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6npjjdfpond"]
+[gd_scene load_steps=7 format=3 uid="uid://c6npjjdfpond"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_mrqer"]
-[ext_resource type="Script" path="res://Scripts/PaperGetter.gd" id="2_4b3ht"]
 [ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3_emqkc"]
 [ext_resource type="PackedScene" uid="uid://b1ctp1kuh7pms" path="res://Scenes/Pages/Presets/Basic1.tscn" id="4_alb5g"]
+[ext_resource type="PackedScene" uid="uid://b1211ln3s3dc2" path="res://Scenes/OkStamp.tscn" id="4_jn7p2"]
+[ext_resource type="Script" path="res://Scripts/Draggable.gd" id="5_f8c4l"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -13,7 +14,6 @@ script = ExtResource("1_mrqer")
 
 [node name="PaperGetter" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("2_4b3ht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PaperGetter"]
 shape = SubResource("1")
@@ -32,3 +32,8 @@ input_pickable = true
 
 [node name="Page" parent="." instance=ExtResource("4_alb5g")]
 position = Vector2(222, 377)
+
+[node name="OkStamp" parent="." instance=ExtResource("4_jn7p2")]
+position = Vector2(572, 506)
+input_pickable = true
+script = ExtResource("5_f8c4l")

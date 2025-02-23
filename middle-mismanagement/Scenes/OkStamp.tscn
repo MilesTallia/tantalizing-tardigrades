@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1211ln3s3dc2"]
+
+[ext_resource type="Texture2D" uid="uid://bytk7lm00fesc" path="res://Assets/Stamp.png" id="1_bm358"]
+[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="2_xdcow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kmah"]
+size = Vector2(195, 174)
+
+[node name="OkStamp" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bm358")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, -17)
+shape = SubResource("RectangleShape2D_0kmah")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -51.0
+offset_top = 23.0
+offset_right = 173.0
+offset_bottom = 98.0
+scale = Vector2(0.75, 0.75)
+theme_override_colors/font_color = Color(0.135061, 0.493563, 0.251795, 1)
+theme_override_fonts/font = ExtResource("2_xdcow")
+theme_override_font_sizes/font_size = 64
+text = "Good"
