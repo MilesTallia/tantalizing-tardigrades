@@ -7,7 +7,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t34sv"]
 size = Vector2(188, 171)
 
-[node name="OkStamp" type="CharacterBody2D"]
+[node name="OkStamp2" type="CharacterBody2D"]
+collision_layer = 2
 input_pickable = true
 script = ExtResource("1_v8scg")
 
@@ -33,10 +34,10 @@ offset_right = 173.0
 offset_bottom = 98.0
 scale = Vector2(0.75, 0.75)
 mouse_filter = 1
-theme_override_colors/font_color = Color(0.135061, 0.493563, 0.251795, 1)
+theme_override_colors/font_color = Color(0.564934, 0.172596, 0.126618, 1)
 theme_override_fonts/font = ExtResource("3_l7fdx")
 theme_override_font_sizes/font_size = 64
-text = "Good"
+text = "Fail"
 
 [connection signal="mouse_entered" from="." to="." method="mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="mouse_exited"]

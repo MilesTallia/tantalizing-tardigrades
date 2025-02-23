@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4pd85vrr0xlt"]
+[gd_scene load_steps=7 format=3 uid="uid://chrbb5lhfurpa"]
 
 [ext_resource type="Script" path="res://Scripts/basic_2.gd" id="1_0mfwv"]
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_sca83"]
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="2_wvomj"]
 [ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="3_6ftyf"]
-[ext_resource type="PackedScene" path="res://Scenes/Pages/Components/Sentence.tscn" id="4_ualbt"]
+[ext_resource type="PackedScene" uid="uid://jca6cdmfvaiu" path="res://Scenes/Pages/Components/Sentence.tscn" id="4_ualbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)
 
-[node name="Page" type="CharacterBody2D"]
-collision_layer = 3
+[node name="Page2" type="CharacterBody2D"]
+collision_layer = 2
 input_pickable = true
 script = ExtResource("1_sca83")
 
@@ -29,7 +29,7 @@ offset_bottom = 152.0
 color = Color(0.764706, 0.780392, 0.792157, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Labels" type="Node2D" parent="."]
+[node name="Labels" type="Node2D" parent="." groups=["page"]]
 script = ExtResource("1_0mfwv")
 
 [node name="Project" parent="Labels" instance=ExtResource("3_6ftyf")]

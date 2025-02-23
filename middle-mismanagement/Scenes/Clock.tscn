@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdlv1hamqk7o8"]
+[gd_scene load_steps=5 format=3 uid="uid://rs8tfqtdao"]
 
 [ext_resource type="Script" path="res://Scripts/Draggable.gd" id="1_aml2u"]
 [ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="1_vquny"]
