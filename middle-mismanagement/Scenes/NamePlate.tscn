@@ -19,14 +19,15 @@ mouse_filter = 1
 color = Color(0.311144, 0.208912, 0.120221, 1)
 
 [node name="LineEdit" type="LineEdit" parent="."]
-offset_left = 7.0
-offset_top = 7.0
-offset_right = 285.0
-offset_bottom = 56.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 580.0
+offset_bottom = 106.0
+scale = Vector2(0.480703, 0.480703)
 focus_mode = 1
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("2_o6jr4")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 64
 placeholder_text = "Your Name Here"
 alignment = 1
 script = ExtResource("1_t8dko")

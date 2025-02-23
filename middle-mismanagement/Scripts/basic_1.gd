@@ -49,17 +49,23 @@ func set_values(project, aqi, cost, output):
 	cost = snapped(cost, 0.01)
 	output = snapped(output, 0.01)
 	$Title.set_child_text(project)
-	$AQI.set_child_text(str(aqi))
+	var plus = ""
+	if aqi >= 0:
+		plus = "+"
+	$AQI.set_child_text(plus + str(aqi) + " AQI")
 	if (aqi <= 0):
-		$AQI.set_value(Color("green"))
+		$AQI.set_value(Color("forest_green"))
 	else:
 		$AQI.set_value(Color("red"))
-	$Budget.set_child_text(str(cost))
+	plus = ""
+	if cost >= 0:
+		plus = "+"
+	$Budget.set_child_text(plus + str(cost) + "K")
 	if (cost >= 0):
-		$Budget.set_value(Color("green"))
+		$Budget.set_value(Color("forest_green"))
 	else:
 		$Budget.set_value(Color("red"))
-	$Output.set_child_text(output)
+	$Output.set_child_text(str(output) + " MW")
 	$Output.set_value(Color(0,0,0))	
 
 

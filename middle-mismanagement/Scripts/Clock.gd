@@ -39,6 +39,5 @@ func _process(delta: float) -> void:
 		
 		if cur_time >= end_time - 1.0:
 			# we done
-			print("Time's up!")
 			running = false
 			finished = true

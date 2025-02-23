@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwerm0jbngxp8"]
+[gd_scene load_steps=6 format=3 uid="uid://x2b64jewc1l3"]
 
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_ks0g7"]
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="2_2onsv"]
 [ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="4_yese3"]
-[ext_resource type="PackedScene" uid="uid://bp8ex58v2rwg0" path="res://Scenes/Graph.tscn" id="5_j6p2p"]
+[ext_resource type="PackedScene" uid="uid://byfulycgqe12m" path="res://Scenes/Graph.tscn" id="5_j6p2p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)
