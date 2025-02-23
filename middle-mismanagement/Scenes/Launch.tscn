@@ -1,44 +1,50 @@
-[gd_scene load_steps=8 format=3 uid="uid://pka571suyydr"]
+[gd_scene load_steps=11 format=3 uid="uid://pka571suyydr"]
 
 [ext_resource type="Script" path="res://Scripts/Launch.gd" id="1_gyeux"]
+[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="2_jug72"]
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="3_fya1g"]
-[ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="4_6xkuw"]
+[ext_resource type="Texture2D" uid="uid://vvah6l60hcy" path="res://Assets/folder_trans.png" id="3_k30py"]
+[ext_resource type="Texture2D" uid="uid://bsgecqcd4hg7s" path="res://Assets/coffee.png" id="5_iq0ok"]
+[ext_resource type="Texture2D" uid="uid://bl872yj5sxpb" path="res://Assets/paper_clip.png" id="6_xev8x"]
+[ext_resource type="PackedScene" uid="uid://c0sgvhta66wbl" path="res://Scenes/Pages/Page.tscn" id="7_uaj1s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iuyox"]
-
-[sub_resource type="Animation" id="Animation_8tqhp"]
-resource_name = "new_animation"
+[sub_resource type="Animation" id="Animation_wetlh"]
+resource_name = "rotating"
+length = 4.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
+"values": [0.0, 1.5708, 3.14159, 4.71239, 6.28319]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y15yn"]
+[sub_resource type="Animation" id="Animation_pwd1x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6qog"]
 _data = {
-"new_animation": SubResource("Animation_8tqhp")
+"RESET": SubResource("Animation_pwd1x"),
+"rotating": SubResource("Animation_wetlh")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nusbh"]
 
 [node name="Launch" type="Node2D"]
 script = ExtResource("1_gyeux")
@@ -46,44 +52,55 @@ script = ExtResource("1_gyeux")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Label" type="Label" parent="."]
-offset_left = -489.0
-offset_top = -280.0
-offset_right = 540.0
-offset_bottom = 88.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -895.0
+offset_top = -376.0
+offset_right = 134.0
+offset_bottom = -8.0
+grow_horizontal = 2
+scale = Vector2(1.775, 1.775)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 88
+theme_override_fonts/font = ExtResource("2_jug72")
+theme_override_font_sizes/font_size = 64
 text = "Middle Mismanagement"
+horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 297.0
-offset_top = 211.0
-offset_right = 521.0
-offset_bottom = 298.0
-theme_override_font_sizes/font_size = 40
+offset_left = 483.0
+offset_top = 270.0
+offset_right = 707.0
+offset_bottom = 357.0
+theme_override_fonts/font = ExtResource("2_jug72")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [node name="NewGame" type="Button" parent="."]
-offset_left = -377.0
-offset_top = 14.0
-offset_right = -79.0
-offset_bottom = 134.0
-theme_override_font_sizes/font_size = 40
+offset_left = -593.0
+offset_top = 70.0
+offset_right = -295.0
+offset_bottom = 190.0
+theme_override_fonts/font = ExtResource("2_jug72")
+theme_override_font_sizes/font_size = 64
 text = "New Game"
 
 [node name="Tutorial" type="Button" parent="."]
-offset_left = 75.0
-offset_top = 19.0
-offset_right = 371.0
-offset_bottom = 140.0
-theme_override_font_sizes/font_size = 40
+offset_left = 261.0
+offset_top = 70.0
+offset_right = 557.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("2_jug72")
+theme_override_font_sizes/font_size = 64
 text = "Tutorial"
 
 [node name="Credits" type="Button" parent="."]
-offset_left = -521.0
-offset_top = 211.0
-offset_right = -282.0
-offset_bottom = 302.0
-theme_override_font_sizes/font_size = 40
+offset_left = -740.0
+offset_top = 270.0
+offset_right = -501.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("2_jug72")
+theme_override_font_sizes/font_size = 64
 text = "Credits"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -92,25 +109,80 @@ light_mask = 512
 visibility_layer = 512
 z_index = -4096
 position = Vector2(7, 27)
-scale = Vector2(0.291912, 0.231445)
+scale = Vector2(0.507, 0.401)
 texture = ExtResource("3_fya1g")
 
-[node name="Folder" parent="." instance=ExtResource("4_6xkuw")]
-z_index = -1000
-position = Vector2(-108, -158)
-script = null
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_k30py")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Folder"]
-shape = SubResource("CircleShape2D_iuyox")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Folder"]
-root_node = NodePath("../AnimatedSprite2D")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
 libraries = {
-"": SubResource("AnimationLibrary_y15yn")
+"": SubResource("AnimationLibrary_q6qog")
 }
+autoplay = "rotating"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Folder"]
-sprite_frames = SubResource("SpriteFrames_nusbh")
+[node name="Coffee" type="Sprite2D" parent="."]
+modulate = Color(0.347817, 0.347817, 0.347817, 1)
+position = Vector2(826, -152)
+scale = Vector2(0.169164, 0.169164)
+texture = ExtResource("5_iq0ok")
+
+[node name="PaperClip" type="Sprite2D" parent="."]
+position = Vector2(-753, -179)
+rotation = 0.941262
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("6_xev8x")
+
+[node name="PaperClip2" type="Sprite2D" parent="."]
+position = Vector2(-670, -205)
+rotation = 0.194374
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("6_xev8x")
+
+[node name="PaperClip3" type="Sprite2D" parent="."]
+position = Vector2(-651, -98)
+rotation = 2.06158
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("6_xev8x")
+
+[node name="Page" parent="." instance=ExtResource("7_uaj1s")]
+position = Vector2(-145, 330)
+rotation = -0.144935
+scale = Vector2(0.7, 0.7)
+
+[node name="Page2" parent="." instance=ExtResource("7_uaj1s")]
+position = Vector2(89, 372)
+rotation = 0.303795
+scale = Vector2(0.7, 0.7)
+
+[node name="Page3" parent="." instance=ExtResource("7_uaj1s")]
+position = Vector2(-23, 406)
+rotation = 0.0109031
+scale = Vector2(0.7, 0.7)
+
+[node name="ColorRect2" type="ColorRect" parent="Page3"]
+offset_left = -3.11065
+offset_top = -154.261
+offset_right = 103.889
+offset_bottom = -114.261
+color = Color(0.764706, 0.780392, 0.792157, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Page3/ColorRect2"]
+offset_left = -199.728
+offset_top = -104.971
+offset_right = -92.7278
+offset_bottom = -64.9715
+rotation = -0.168388
+color = Color(0.764706, 0.780392, 0.792157, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Page3/ColorRect2/ColorRect2"]
+offset_left = 390.835
+offset_top = 125.709
+offset_right = 497.835
+offset_bottom = 165.709
+rotation = 0.465778
+color = Color(0.764706, 0.780392, 0.792157, 1)
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
