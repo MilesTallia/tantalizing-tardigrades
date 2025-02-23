@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
+@export var stamp = false
+
 var draggingDistance
 var dir
 var dragging
 var newPosition = Vector2()
-
 var mouse_in = false
 var chosen = false
 
@@ -48,8 +49,7 @@ func MarkFolder():
 	if (count == 0):
 		pass
 	elif (count == 1):
-		print("stamped")
-		#$Area2D.get_overlapping_bodies()[0].chosenVal()
+		$Area2D.get_overlapping_bodies()[0].getStamped(stamp)
 
 	else:
 		var max_index = -1
@@ -59,5 +59,5 @@ func MarkFolder():
 				max_index = b.z_index
 				top_obj = b
 		
-		#top_obj.chosenVal()
-		print("stamped")
+		top_obj.getStamped(stamp)
+		#print("stamped")
