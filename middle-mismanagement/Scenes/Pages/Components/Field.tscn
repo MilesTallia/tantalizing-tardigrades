@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp5xg46qi1eb3"]
+
+[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="1_movja"]
+[ext_resource type="Script" path="res://Scripts/edit_value.gd" id="2_mrg5v"]
+
+[node name="Field2" type="Label"]
+scale = Vector2(0.25, 0.25)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_movja")
+theme_override_font_sizes/font_size = 64
+text = "Budget:"
+script = ExtResource("2_mrg5v")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 244.0
+offset_right = 372.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0.701961, 0, 1)
+theme_override_fonts/font = ExtResource("1_movja")
+theme_override_font_sizes/font_size = 64
+text = "$100"

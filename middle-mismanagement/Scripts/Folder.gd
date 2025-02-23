@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+
+var old_location = position
+
+
 var draggingDistance
 var dir
 var dragging
@@ -8,6 +12,10 @@ var newPosition = Vector2()
 var mouse_in = false
 var chosen = false
 
+# specific to folder
+var open = false
+var hasPapers = true
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if chosen and event.is_pressed() && mouse_in:
@@ -15,6 +23,18 @@ func _input(event):
 			dir = (get_viewport().get_mouse_position() - position).normalized()
 			dragging = true
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
+			if event.double_click:
+				hasPapers = false
+				$"Closed Folder/Paper".visible = false
+				if open:
+					$"Open Folder".visible = false
+					$"Closed Folder".visible = true
+					open = false
+				else:
+					$"Open Folder".visible = true
+					$"Closed Folder".visible = false
+					open = true
+				dragging = false
 		else:
 			dragging = false
 			chosen = false
@@ -25,6 +45,7 @@ func _input(event):
 
 func _physics_process(delta):
 	if dragging:
+		scale = Vector2(1,1)
 		set_velocity((newPosition - position) * Vector2(30, 30))
 		move_and_slide()
 
