@@ -1,16 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvfh2gyn7b12c"]
+[gd_scene load_steps=5 format=3 uid="uid://olsho8scxxxe"]
 
-[ext_resource type="Texture2D" uid="uid://bytk7lm00fesc" path="res://Assets/Stamp.png" id="1_bm358"]
-[ext_resource type="Script" path="res://Scripts/ClickDrag.gd" id="1_kguj5"]
-[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="2_xdcow"]
+[ext_resource type="Script" path="res://Scripts/ClickDrag.gd" id="1_v8scg"]
+[ext_resource type="Texture2D" uid="uid://bytk7lm00fesc" path="res://Assets/Stamp.png" id="2_npcuy"]
+[ext_resource type="FontFile" uid="uid://biasop78u5nfn" path="res://Assets/Fonts/AtariSmall.ttf" id="3_l7fdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t34sv"]
 size = Vector2(188, 171)
 
 [node name="OkStamp" type="CharacterBody2D"]
 input_pickable = true
-script = ExtResource("1_kguj5")
-stamp = true
+script = ExtResource("1_v8scg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -17.5)
@@ -25,7 +24,7 @@ position = Vector2(-2, -14)
 shape = SubResource("RectangleShape2D_t34sv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_bm358")
+texture = ExtResource("2_npcuy")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -51.0
@@ -35,7 +34,7 @@ offset_bottom = 98.0
 scale = Vector2(0.75, 0.75)
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.135061, 0.493563, 0.251795, 1)
-theme_override_fonts/font = ExtResource("2_xdcow")
+theme_override_fonts/font = ExtResource("3_l7fdx")
 theme_override_font_sizes/font_size = 64
 text = "Good"
 
