@@ -9,8 +9,11 @@ var Ymax = "0"
 var Yunit = "unit"
 
 var direction = "up"
+var up = preload("res://Assets/Up.png")
+var down = preload("res://Assets/Down.png")
 
-func _ready() -> void:
+func loadValues():
+	print("Loading Values Into Graph ...")
 	$Xmin.set_text(Xmin)
 	$Xmax.set_text(Xmax)
 	$Xunit.set_text(Xunit)
@@ -19,6 +22,6 @@ func _ready() -> void:
 	$Yunit.set_text(Yunit)
 	
 	if direction == "up":
-		$Image.set_texture("res://Assets/Up.png")
+		$Image.set_texture(up)
 	else:
-		$Image.set_texture("res://Assets/Down.png")
+		$Image.set_texture(down)

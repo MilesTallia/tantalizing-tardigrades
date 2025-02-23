@@ -3,11 +3,10 @@ extends Node
 var rng = RandomNumberGenerator.new()
 
 func rand(good : bool):
-	print(3)
 	if (good == true):
-		randomize_good()
+		return randomize_good()
 	else:
-		randomize_bad()
+		return randomize_bad()
 		
 func randomize_project(good : bool):
 	if (good == true):
@@ -21,17 +20,19 @@ func randomize_bad():
 	var cost = rng.randf_range(0.0, 30.0)
 	var output = rng.randf_range(30, 100)
 	set_values(proj, aqi, cost, output)
+	return [aqi,cost,output]
 	
 func randomize_good():
 	var version = rng.randf_range(0, 10)
 	if (version >= 8):
-		randomize_aqi_reducer()
+		return randomize_aqi_reducer()
 	else:
 		var proj = randomize_project(true)
 		var aqi = 0
 		var cost = rng.randf_range(-15.0, 5.0)
 		var output = rng.randf_range(40, 80)
 		set_values(proj, aqi, cost, output)
+		return [aqi,cost,output]
 
 func randomize_aqi_reducer():
 	var proj = randomize_project(true)
@@ -39,11 +40,11 @@ func randomize_aqi_reducer():
 	var cost = rng.randf_range(-20.0, -10.0)
 	var output = 0
 	set_values(proj, aqi, cost, output)
+	return [aqi,cost,output]
 	
 	
 
 func set_values(project, aqi, cost, output):
-	print(4)
 	aqi = snapped(aqi, 0.01)
 	cost = snapped(cost, 0.01)
 	output = snapped(output, 0.01)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cucwululgubay"]
+[gd_scene load_steps=4 format=3 uid="uid://bspfi0c7qs6ve"]
 
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_7q3ed"]
 [ext_resource type="Script" path="res://Scripts/NamePlate.gd" id="1_t8dko"]

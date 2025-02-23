@@ -59,14 +59,14 @@ func spawn_pages():
 	var page = load("res://Scenes/Pages/Presets/Basic" + str(difficulty) + ".tscn")
 	var pageInst = page.instantiate()
 	pageInst.position = position
-		
+	#pageInst.parentFolder = self
+	get_parent().add_child(pageInst)
 	if (good):
-		print(pageInst.get_child(3))
 		pageInst.get_child(3).rand(true)
 	else:
 		pageInst.get_child(3).rand(false)
 		
-	get_parent().add_child(pageInst)
+	
 
 func chosenVal():
 	chosen = true
