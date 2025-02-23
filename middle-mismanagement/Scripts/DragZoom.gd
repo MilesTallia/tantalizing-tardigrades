@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var old_position = position
 
 var draggingDistance
 var dir
@@ -19,39 +18,35 @@ func _is_pos_in(checkpos:Vector2):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if zoomed:
-			if _is_pos_in(event.position):
-				if event.double_click:
-					scale = Vector2(1, 1)
+		if zoomed and event.is_pressed() and not _is_pos_in(event.position):
+			print("outside click zoomed")
+			scale = Vector2(1, 1)
+			zoomed = false
+		elif chosen and event.is_pressed() and mouse_in:
+			print("normal drag")
+			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
+			dir = (get_viewport().get_mouse_position() - position).normalized()
+			dragging = true
+			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
+			if event.double_click:
+				if zoomed:
+					scale = Vector2(1,1)
 					zoomed = false
-			else:
-				if event.is_pressed():
-					scale = Vector2(1, 1)
-					zoomed = false
-		else:
-			if chosen and event.is_pressed() and mouse_in:
-				draggingDistance = position.distance_to(get_viewport().get_mouse_position())
-				dir = (get_viewport().get_mouse_position() - position).normalized()
-				dragging = true
-				newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
-				if event.double_click:
+				else:
 					scale = Vector2(3,3)
-					old_position = position
-					print(DisplayServer.window_get_size())
-					#position = Vector2((DisplayServer.window_get_size().x)/2,(DisplayServer.window_get_size().y)/2)
 					dragging = false
 					zoomed = true
-			else:
-				dragging = false
-				chosen = false
+		else:
+			print("else")
+			dragging = false
+			chosen = false
 			
 	elif event is InputEventMouseMotion:
 		if dragging:
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 
 func _physics_process(delta):
-	if dragging and not zoomed:
-		scale = Vector2(1,1)
+	if dragging:
 		set_velocity((newPosition - position) * Vector2(30, 30))
 		move_and_slide()
 
