@@ -18,6 +18,10 @@ var company = "<<Company>>"
 var stamped = false;
 var passed = false;
 
+var aqi = 0
+var cost = 0
+var output = 0
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if chosen and event.is_pressed() && mouse_in:
@@ -60,12 +64,16 @@ func spawn_pages():
 	var page = load("res://Scenes/Pages/Presets/Basic" + str(difficulty) + ".tscn")
 	var pageInst = page.instantiate()
 	pageInst.position = position
-		
+	var values = []
 	if (good):
 		print(pageInst.get_child(3))
-		pageInst.get_child(3).rand(true)
+		values = pageInst.get_child(3).rand(true)
 	else:
-		pageInst.get_child(3).rand(false)
+		values = pageInst.get_child(3).rand(false)
+	aqi = values[0]
+	cost = values[1]
+	output = values[2]
+	
 		
 	get_parent().add_child(pageInst)
 	
@@ -74,6 +82,9 @@ func get_stamped(stamp: bool):
 		stamped = true
 		passed = stamp
 		get_node("GameManager").folder_stamped()
+		
+func get_stats():
+	return [aqi, cost, output]
 
 
 func chosenVal():
