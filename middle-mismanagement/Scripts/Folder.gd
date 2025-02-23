@@ -90,7 +90,7 @@ func get_stamped(stamp: bool):
 		gamemanager.folder_stamped()
 		
 func get_stats():
-	return [aqi, cost, output]
+	return [snapped(aqi, 0.01), snapped(cost, 0.01), snapped(output, 0.01)]
 
 func chosenVal():
 	chosen = true

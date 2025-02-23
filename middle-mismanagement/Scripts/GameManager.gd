@@ -110,7 +110,8 @@ func end_day() -> void:
 		get_parent().remove_child(folder)
 		if folder.passed:
 			var folder_stats = folder.get_stats()
-			set_money(money + folder_stats[1])
+			print(folder_stats)
+			set_money(money + folder_stats[1]*1000)
 			print(money + folder_stats[1])
 			set_change_atm(change_atm + folder_stats[0])
 			set_current_energy(current_energy + folder_stats[2])
@@ -122,6 +123,7 @@ func end_day() -> void:
 	elif (current_energy < day_num * 100):
 		end_game()
 	else:
+		current_atm += change_atm
 		start_day()
 
 func end_game():
