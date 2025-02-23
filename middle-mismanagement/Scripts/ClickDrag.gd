@@ -55,7 +55,7 @@ func MarkFolder():
 		var max_index = -1
 		var top_obj = null
 		for b in $Area2D.get_overlapping_bodies():
-			if (b.z_index > max_index):
+			if (b.z_index > max_index && b.stamped == false):
 				max_index = b.z_index
 				top_obj = b
 		
