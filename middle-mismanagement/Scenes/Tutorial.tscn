@@ -10,11 +10,11 @@
 [node name="Game" parent="." instance=ExtResource("1_bkpa5")]
 
 [node name="Background" parent="Game" index="0"]
-position = Vector2(570.164, 331)
-scale = Vector2(0.332272, 0.332682)
+position = Vector2(967, 537)
+scale = Vector2(0.471078, 0.353516)
 
 [node name="OkStamp" parent="Game" index="1"]
-position = Vector2(768, 288)
+position = Vector2(789, 847)
 script = ExtResource("2_yai28")
 
 [node name="Label2" type="Label" parent="Game/OkStamp" index="4"]
@@ -31,7 +31,7 @@ when over folder.
 "
 
 [node name="DebriefPage" parent="Game" index="3"]
-position = Vector2(1000, 177)
+position = Vector2(1694, 206)
 scale = Vector2(1, 1)
 
 [node name="Label" parent="Game/DebriefPage" index="3"]
@@ -45,12 +45,12 @@ theme_override_font_sizes/font_size = 15
 [node name="GameManager" parent="Game" index="4"]
 script = ExtResource("2_732h3")
 
-[node name="OkStamp2" parent="Game" index="6"]
-position = Vector2(767, 105)
-script = ExtResource("2_yai28")
+[node name="NamePlate" parent="Game" index="5"]
+position = Vector2(521, 111)
 
-[node name="Label" parent="Game/OkStamp2" index="3"]
-mouse_filter = 2
+[node name="OkStamp2" parent="Game" index="6"]
+position = Vector2(443, 847)
+script = ExtResource("2_yai28")
 
 [node name="Label2" type="Label" parent="Game/OkStamp2" index="4"]
 visible = false
@@ -65,26 +65,30 @@ text = "Press space or right click
 when over folder.
 "
 
+[node name="Clock" parent="Game" index="7"]
+position = Vector2(917, 123)
+
+[node name="pause_menu" parent="Game/Camera2D" index="0"]
+visible = false
+
 [node name="DragLabel" type="Label" parent="Game"]
-offset_left = 560.0
-offset_top = 365.0
-offset_right = 1153.0
-offset_bottom = 452.0
+offset_left = 1269.0
+offset_top = 750.0
+offset_right = 1857.0
+offset_bottom = 837.0
 theme_override_fonts/font = ExtResource("3_04vc7")
 theme_override_font_sizes/font_size = 30
 text = "Everything on the screen is draggable. 
 Try dragging stuff around!"
 
 [node name="FolderPageLabel" type="Label" parent="Game"]
-offset_left = 457.0
-offset_top = 454.0
-offset_right = 1147.0
-offset_bottom = 541.0
+offset_left = 1270.0
+offset_top = 880.0
+offset_right = 1960.0
+offset_bottom = 967.0
 theme_override_fonts/font = ExtResource("3_04vc7")
 theme_override_font_sizes/font_size = 30
 text = "You can double click folders and papers.
 Folders will open, papers will zoom."
 
 [editable path="Game"]
-[editable path="Game/OkStamp2"]
-[editable path="Game/Clock"]

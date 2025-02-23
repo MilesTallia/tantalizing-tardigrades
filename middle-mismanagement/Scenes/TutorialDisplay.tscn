@@ -11,36 +11,36 @@ script = ExtResource("1_mjgqd")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1000
-position = Vector2(-0.0820802, -2.00011)
-scale = Vector2(0.286234, 0.213542)
+position = Vector2(-1.99992, 2.40803e-05)
+scale = Vector2(0.469608, 0.354167)
 texture = ExtResource("1_bop4w")
 
 [node name="TestRun" type="Button" parent="."]
-offset_left = -123.0
-offset_top = 218.0
-offset_right = 125.0
-offset_bottom = 295.0
+offset_left = -163.0
+offset_top = 340.0
+offset_right = 169.0
+offset_bottom = 501.0
 theme_override_font_sizes/font_size = 40
 text = "Test run"
 
 [node name="Label" type="Label" parent="."]
-offset_left = -553.0
-offset_top = -305.0
-offset_right = 556.0
-offset_bottom = 197.0
+offset_left = -843.0
+offset_top = -483.0
+offset_right = 842.0
+offset_bottom = -319.0
 theme_override_fonts/font = ExtResource("3_t712c")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 80
 text = "Welcome to Middle Mismanagement!"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = -573.0
-offset_top = -238.0
-offset_right = 567.0
-offset_bottom = 205.0
+offset_left = -945.0
+offset_top = -362.0
+offset_right = 942.0
+offset_bottom = 311.0
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("3_t712c")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 33
 text = "You are head of the energy department at Kalamazoo.
 You will be presented folders with project proposals.
 Each day you must go through all of the folders and approve or deny them in the given amount of time.

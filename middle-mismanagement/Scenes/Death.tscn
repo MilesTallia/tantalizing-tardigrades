@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="2_ahqcp"]
 
 [node name="Death" type="Node2D"]
+scale = Vector2(1.655, 1.655)
 script = ExtResource("1_8u7nt")
 
 [node name="Camera2D" type="Camera2D" parent="."]

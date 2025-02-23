@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cn7c4hg6y7hxh" path="res://Assets/Max.jpg" id="6_qfbae"]
 
 [node name="Credits" type="Node2D"]
+scale = Vector2(1.665, 1.665)
 script = ExtResource("1_5asr8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
