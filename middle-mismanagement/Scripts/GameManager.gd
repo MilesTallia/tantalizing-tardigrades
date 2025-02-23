@@ -64,6 +64,8 @@ func start_day() -> void:
 		clock.start(30)
 	else:
 		clock.start(300 - day_num * 15)
+	for child in get_tree().get_nodes_in_group("page"):
+		child.queue_free()
 	array_folders.resize(num_folders)
 	num_stamped = 0
 	set_day_num(day_num + 1)

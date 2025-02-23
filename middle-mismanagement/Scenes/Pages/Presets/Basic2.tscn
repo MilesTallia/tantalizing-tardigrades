@@ -29,7 +29,7 @@ offset_bottom = 152.0
 color = Color(0.764706, 0.780392, 0.792157, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Labels" type="Node2D" parent="."]
+[node name="Labels" type="Node2D" parent="." groups=["page"]]
 script = ExtResource("1_0mfwv")
 
 [node name="Project" parent="Labels" instance=ExtResource("3_6ftyf")]
