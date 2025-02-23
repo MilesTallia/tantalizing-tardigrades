@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://db61qb2c13rvi"]
+[gd_scene load_steps=15 format=3 uid="uid://db61qb2c13rvi"]
 
 [ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="1"]
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="2"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="7_aihta"]
 [ext_resource type="PackedScene" uid="uid://cvfh2gyn7b12c" path="res://Scenes/OkStamp.tscn" id="9_aehwd"]
 [ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="10_3bgtx"]
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="12_iao3h"]
+[ext_resource type="Script" path="res://Scenes/pause_menu_buttons.gd" id="13_5vx58"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -42,14 +44,15 @@ script = ExtResource("5_7ns8a")
 [node name="Label" type="Label" parent="DebriefPage"]
 offset_left = -107.0
 offset_top = -150.0
-offset_right = 159.0
-offset_bottom = 30.0
-scale = Vector2(0.8, 1.7)
+offset_right = 1113.0
+offset_bottom = 660.0
+scale = Vector2(0.175, 0.372)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("7_6s34f")
-theme_override_font_sizes/font_size = 14
-autowrap_mode = 3
+theme_override_font_sizes/font_size = 64
+text = "wqeqweq"
+autowrap_mode = 2
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("4_icqku")
@@ -62,4 +65,13 @@ position = Vector2(1415, 944)
 [node name="Clock" parent="." instance=ExtResource("10_3bgtx")]
 position = Vector2(348, 11)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1000
+position = Vector2(965, 540)
+
+[node name="pause_menu" parent="Camera2D" instance=ExtResource("12_iao3h")]
+scale = Vector2(1.275, 1.275)
+script = ExtResource("13_5vx58")
+
+[editable path="OkStamp2"]
 [editable path="Clock"]
