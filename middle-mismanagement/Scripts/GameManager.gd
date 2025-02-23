@@ -61,10 +61,10 @@ func _ready() -> void:
 	
 func start_day() -> void:
 	var clock = get_node("..//Clock").get_child(3)
-	if 300 - day_num * 15 < 30:
+	if 300 - day_num * 10 < 30:
 		clock.start(30)
 	else:
-		clock.start(300 - day_num * 15)
+		clock.start(360 - day_num * 10)
 	for child in get_tree().get_nodes_in_group("page"):
 		child.queue_free()
 	
@@ -102,15 +102,15 @@ func start_day() -> void:
 		if randi() % 2:
 			dir = false 
 		folder.good = dir
-		if dir and diff == 1:
+		if dir and folder.difficulty == 1:
 			folder.company = eco_freindly_companies.pick_random()
-		elif dir and diff == 3:
+		elif dir and folder.difficulty == 3:
 			folder.company = normal_renewable_companies.pick_random()
-		elif !dir and diff == 1:
+		elif !dir and folder.difficulty == 1:
 			folder.company = ominous_companies.pick_random()
-		elif !dir and diff == 3:
+		elif !dir and folder.difficulty == 3:
 			folder.company = shady_companies.pick_random()
-		elif diff == 2 or diff > 3:
+		elif folder.difficulty == 2 or folder.difficulty > 3:
 			folder.company = vague_companies.pick_random()
 		get_parent().add_child(folder)
 		folder.position += Vector2(0, 90* i + 100)
@@ -147,10 +147,17 @@ func end_day() -> void:
 		start_day()
 
 func end_game():
+	#var game_manager_instance : get_parent() = null
 	print(get_path())
 	get_tree().change_scene_to_file("res://Scenes/Death.tscn")
-	#change scene to end game
 	return; 
+	
+#func get_game_manager() -> GameManager:
+	#if game_manager_instance == null:
+		#game_manager_instance = GameManager.new()  # Create an instance of GameManager
+		#get_tree().root.add_child(game_manager_instance)  # Add it to the scene tree
+		#print("GameManager instance created.")
+	#return game_manager_instance
 	
 func folder_stamped() -> void:
 	num_stamped += 1
