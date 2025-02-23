@@ -52,7 +52,11 @@ script = ExtResource("4_icqku")
 [node name="OkStamp2" parent="." instance=ExtResource("9_aehwd")]
 position = Vector2(384, 576)
 
+[node name="Label" parent="OkStamp2" index="3"]
+mouse_filter = 2
+
 [node name="Clock" parent="." instance=ExtResource("10_3bgtx")]
 position = Vector2(348, 11)
 
+[editable path="OkStamp2"]
 [editable path="Clock"]

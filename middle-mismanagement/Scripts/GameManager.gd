@@ -60,7 +60,10 @@ func _ready() -> void:
 	
 func start_day() -> void:
 	var clock = get_node("..//Clock").get_child(3)
-	clock.start(10)
+	if 300 - day_num * 15 < 30:
+		clock.start(30)
+	else:
+		clock.start(300 - day_num * 15)
 	array_folders.resize(num_folders)
 	num_stamped = 0
 	set_day_num(day_num + 1)
@@ -94,6 +97,7 @@ func start_day() -> void:
 		elif diff == 3:
 			folder.company = vague_companies.pick_random()
 		get_parent().add_child(folder)
+		folder.position += Vector2(0, 90* i + 100)
 		array_folders[i] = folder
 		print(folder.company)
 		i += 1	
