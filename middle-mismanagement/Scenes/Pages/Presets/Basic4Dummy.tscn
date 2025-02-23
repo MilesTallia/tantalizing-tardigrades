@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)
 
-[node name="Page2" type="CharacterBody2D"]
+[node name="Page2" type="CharacterBody2D" groups=["page"]]
 collision_layer = 2
 input_pickable = true
 script = ExtResource("1_cmpkm")
