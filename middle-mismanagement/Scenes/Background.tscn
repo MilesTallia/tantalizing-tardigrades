@@ -1,3 +1,42 @@
-[gd_scene format=3 uid="uid://cvnsm2vlk8nol"]
+[gd_scene load_steps=9 format=3 uid="uid://cvnsm2vlk8nol"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_75m7y"]
+[ext_resource type="Texture2D" uid="uid://t5icn73ikrno" path="res://Assets/Desk Background.jpg" id="2_1pskt"]
+[ext_resource type="Script" path="res://Scripts/DraggableIndexGetter.gd" id="2_fsw0r"]
+[ext_resource type="PackedScene" uid="uid://j1o0vx3bjnn5" path="res://Scenes/Paper.tscn" id="3_7bcdp"]
+[ext_resource type="PackedScene" uid="uid://bspfi0c7qs6ve" path="res://Scenes/NamePlate.tscn" id="4_1nwx2"]
+[ext_resource type="PackedScene" uid="uid://q31f515aqwhi" path="res://Scenes/Folder.tscn" id="5_ny0nx"]
+[ext_resource type="Script" path="res://Scripts/folder_1.gd" id="6_ufioi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvvn5"]
+radius = 2.52616
 
 [node name="Background" type="Node2D"]
+script = ExtResource("1_75m7y")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(571, 331)
+scale = Vector2(0.332682, 0.332682)
+texture = ExtResource("2_1pskt")
+
+[node name="DragableIndexGetter" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("2_fsw0r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DragableIndexGetter"]
+shape = SubResource("CircleShape2D_kvvn5")
+
+[node name="Paper2" parent="." instance=ExtResource("3_7bcdp")]
+position = Vector2(957, 209)
+
+[node name="Paper3" parent="." instance=ExtResource("3_7bcdp")]
+position = Vector2(961, 299)
+
+[node name="Paper" parent="." instance=ExtResource("3_7bcdp")]
+position = Vector2(954, 399)
+
+[node name="NamePlate" parent="." instance=ExtResource("4_1nwx2")]
+
+[node name="Folder" parent="." instance=ExtResource("5_ny0nx")]
+position = Vector2(207, 269)
+script = ExtResource("6_ufioi")
