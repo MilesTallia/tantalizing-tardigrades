@@ -56,7 +56,7 @@ func set_values(project, aqi, cost, output):
 	sentences.erase(sent)
 	var s = get_node(str(sent))
 	
-	s.set_text(aqi_impacts[project] % [str(aqi*0.75), str(aqi*0.25)])
+	s.set_text(aqi_impacts[project] % [str(aqi*0.75), str(aqi*1.25)])
 	sent = sentences.pick_random()
 	sentences.erase(sent)
 	s = get_node(str(sent))
