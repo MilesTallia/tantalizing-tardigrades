@@ -45,9 +45,11 @@ offset_left = -90.0
 offset_top = -120.0
 offset_right = 422.0
 offset_bottom = -55.0
-text = "Title:"
+text = ""
 
 [node name="Label" parent="Title" index="0"]
+offset_left = 0.0
+offset_right = 288.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "SweatShop"
 
