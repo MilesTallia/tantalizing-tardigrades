@@ -64,6 +64,7 @@ func spawn_pages():
 	var page = load("res://Scenes/Pages/Presets/Basic" + str(difficulty) + ".tscn")
 	var pageInst = page.instantiate()
 	pageInst.position = position
+	pageInst.z_index = z_index + 1
 	get_parent().add_child(pageInst)
 	var values = []
 	if (good):
