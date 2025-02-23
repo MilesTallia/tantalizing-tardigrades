@@ -14,6 +14,7 @@ script = ExtResource("1_7q3ed")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 500.0
 offset_bottom = 116.0
+mouse_filter = 1
 color = Color(0.311144, 0.208912, 0.120221, 1)
 
 [node name="LineEdit" type="LineEdit" parent="."]
@@ -22,6 +23,7 @@ offset_top = 14.0
 offset_right = 484.0
 offset_bottom = 102.0
 focus_mode = 1
+mouse_filter = 1
 theme_override_font_sizes/font_size = 47
 placeholder_text = "Your Name Here"
 alignment = 1
