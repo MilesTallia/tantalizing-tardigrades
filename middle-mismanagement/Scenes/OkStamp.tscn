@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjn11fips21cc"]
+[gd_scene load_steps=5 format=3 uid="uid://cvfh2gyn7b12c"]
 
 [ext_resource type="Texture2D" uid="uid://bytk7lm00fesc" path="res://Assets/Stamp.png" id="1_bm358"]
 [ext_resource type="Script" path="res://Scripts/ClickDrag.gd" id="1_kguj5"]
