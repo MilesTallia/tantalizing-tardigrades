@@ -92,7 +92,7 @@ func set_values():
 		dupePageInst.get_child(3).get_child(2).Xmax = str(snapped(randf() * 7, 0.01))
 		dupePageInst.get_child(3).get_child(2).Ymax = str(cost)
 		dupePageInst.get_child(3).get_child(2).Xunit = "Time"
-		dupePageInst.get_child(3).get_child(2).Yunit = "Budget"
+		dupePageInst.get_child(3).get_child(2).Yunit = "Budget (K)"
 		if cost > 0:
 			dupePageInst.get_child(3).get_child(2).direction = "up"
 		else:
@@ -103,7 +103,7 @@ func set_values():
 		dupePageInst.get_child(3).get_child(2).Ymin = str(snapped(randf() * 7, 0.01))
 		dupePageInst.get_child(3).get_child(2).Xmax = str(cost)
 		dupePageInst.get_child(3).get_child(2).Ymax = "0"
-		dupePageInst.get_child(3).get_child(2).Xunit = "Budget"
+		dupePageInst.get_child(3).get_child(2).Xunit = "Budget (K)"
 		dupePageInst.get_child(3).get_child(2).Yunit = "Time"
 		if cost > 0:
 			dupePageInst.get_child(3).get_child(2).direction = "down"
@@ -123,7 +123,7 @@ func set_values():
 		dupePageInst2.get_child(3).get_child(2).Xmax = str(snapped(randf() * 7, 0.01))
 		dupePageInst2.get_child(3).get_child(2).Ymax = str(output)
 		dupePageInst2.get_child(3).get_child(2).Xunit = "Time"
-		dupePageInst2.get_child(3).get_child(2).Yunit = "Output"
+		dupePageInst2.get_child(3).get_child(2).Yunit = "Output (MW)"
 		if cost > 0:
 			dupePageInst2.get_child(3).get_child(2).direction = "up"
 		else:
@@ -134,7 +134,7 @@ func set_values():
 		dupePageInst2.get_child(3).get_child(2).Ymin = str(snapped(randf() * 7, 0.01))
 		dupePageInst2.get_child(3).get_child(2).Xmax = str(output)
 		dupePageInst2.get_child(3).get_child(2).Ymax = "0"
-		dupePageInst2.get_child(3).get_child(2).Xunit = "Output"
+		dupePageInst2.get_child(3).get_child(2).Xunit = "Output (MW)"
 		dupePageInst2.get_child(3).get_child(2).Yunit = "Time"
 		if cost > 0:
 			dupePageInst2.get_child(3).get_child(2).direction = "down"
