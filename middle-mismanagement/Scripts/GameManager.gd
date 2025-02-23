@@ -140,10 +140,6 @@ func folder_stamped() -> void:
 		await get_tree().create_timer(1).timeout
 		end_day()
 		
-	
-
-		
-		
 var ominous_companies = [
 	"Inferno Extraction Syndicate",
 	"Abyssal Fuel Holdings",
@@ -188,11 +184,11 @@ var ominous_companies = [
 	"PetroTyrant Global",
 	"DeathCore Technologies",
 	"Geocide Systems",
-	"TerraAnnihilation Industries",
+	"Terra Annihilation Industries",
 	"FuelReaper Dynamics",
 	"CarbonDoom Power",
-	"StratumObliterator Holdings",
-	"MagmaDevourer Solutions",
+	"Stratum Obliterator Holdings",
+	"Magma Devourer Solutions",
 	"Sedimentary Catastrophe Group",
 	"DeepTerra Ruination"
 ]
@@ -241,7 +237,7 @@ var shady_companies = [
 	"PetroStratum Global",
 	"CoalCore Technologies",
 	"GeoRefine Systems",
-	"TerraCombustion Industries",
+	"Terra Combustion Industries",
 	"FuelLith Dynamics",
 	"CarbonNexus Power",
 	"StratumFuel Holdings",

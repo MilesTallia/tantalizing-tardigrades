@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/DragZoom.gd" id="1_sca83"]
 [ext_resource type="Texture2D" uid="uid://jp5q47ch5mw1" path="res://Assets/large-paper.png" id="2_wvomj"]
 [ext_resource type="PackedScene" uid="uid://cp5xg46qi1eb3" path="res://Scenes/Pages/Components/Field.tscn" id="3_6ftyf"]
-[ext_resource type="PackedScene" path="res://Scenes/Pages/Components/Sentence.tscn" id="4_ualbt"]
+[ext_resource type="PackedScene" uid="uid://jca6cdmfvaiu" path="res://Scenes/Pages/Components/Sentence.tscn" id="4_ualbt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj8p"]
 size = Vector2(224.596, 325.194)

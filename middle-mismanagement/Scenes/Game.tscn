@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cvfh2gyn7b12c" path="res://Scenes/OkStamp.tscn" id="9_aehwd"]
 [ext_resource type="PackedScene" uid="uid://rs8tfqtdao" path="res://Scenes/Clock.tscn" id="10_3bgtx"]
 [ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="12_iao3h"]
-[ext_resource type="Script" path="res://Scripts/pause_menu_buttons.gd" id="13_l25se"]
+[ext_resource type="Script" path="res://Scenes/pause_menu_buttons.gd" id="13_5vx58"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 2.52616
@@ -65,11 +65,12 @@ position = Vector2(1415, 944)
 position = Vector2(348, 11)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1000
 position = Vector2(575, 325)
 
 [node name="pause_menu" parent="Camera2D" instance=ExtResource("12_iao3h")]
 scale = Vector2(1.275, 1.275)
-script = ExtResource("13_l25se")
+script = ExtResource("13_5vx58")
 
 [editable path="OkStamp2"]
 [editable path="Clock"]
